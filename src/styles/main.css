@@ -307,7 +307,7 @@ body.no-scroll {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 160px 20px 80px;
 
   background-image: url("/hero-bg.jpg");
@@ -331,10 +331,12 @@ body.no-scroll {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
-  margin-left: 8%;
+  max-width: 980px;
+  margin: 0 auto;          /* was margin-left: 8% */
   padding: 64px 24px;
+  text-align: center;      /* centers h1, p, etc */
 }
+
 
 .hero-meta {
   color: var(--yellow);
@@ -353,18 +355,20 @@ body.no-scroll {
 }
 
 .hero-lead {
-  max-width: 640px;
+  max-width: 720px;
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.7;
-  margin-bottom: 34px;
+  margin: 0 auto 34px;     /* was margin-bottom only */
 }
 
 .hero-actions {
   display: flex;
+  justify-content: center; /* center buttons row */
   gap: 16px;
   flex-wrap: wrap;
 }
+
 
 .btn {
   padding: 16px 26px;
@@ -1775,4 +1779,65 @@ textarea:focus {
   height: 18px;
   display: block;
   fill: currentColor;
+}
+
+/* =====================
+   ORGANIZED BY (subtle strip)
+===================== */
+
+.org-by {
+  padding: 18px 24px 8px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.18);
+}
+
+.org-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.org-label {
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+.org-logos {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.org-logo {
+  height: 22px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  opacity: 0.78;
+  filter: grayscale(1) contrast(1.05);
+}
+
+.org-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(245,180,0,0.55); /* subtle accent */
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .org-by {
+    padding: 16px 16px 6px;
+  }
+  .org-logo {
+    height: 20px;
+    max-width: 150px;
+  }
 }
