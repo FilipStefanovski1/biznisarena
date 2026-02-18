@@ -1,0 +1,227 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".navbar");
+  const navLinks = Array.from(document.querySelectorAll(".nav-menu a"));
+  const sections = Array.from(document.querySelectorAll("section[id]"));
+  const backToTop = document.querySelector(".back-to-top");
+
+  const navToggle = document.querySelector(".nav-toggle");
+  const mobileNav = document.querySelector("#mobileNav");
+
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  // -----------------------
+  // Sticky header + back-to-top
+  // -----------------------
+  const onScroll = () => {
+    const y = window.scrollY;
+
+    if (y > 40) header.classList.add("is-scrolled");
+    else header.classList.remove("is-scrolled");
+
+    if (backToTop) {
+      if (y > 600) backToTop.classList.add("show");
+      else backToTop.classList.remove("show");
+    }
+
+    // Scrollspy (desktop nav)
+    updateActiveNavLink();
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // -----------------------
+  // Back to top
+  // -----------------------
+  if (backToTop) {
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+    });
+  }
+
+  // -----------------------
+  // Mobile nav toggle
+  // -----------------------
+  const closeMobileNav = () => {
+    if (!mobileNav) return;
+    mobileNav.hidden = true;
+    navToggle?.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("no-scroll");
+  };
+
+  const openMobileNav = () => {
+    if (!mobileNav) return;
+    mobileNav.hidden = false;
+    navToggle?.setAttribute("aria-expanded", "true");
+    document.body.classList.add("no-scroll");
+  };
+
+  navToggle?.addEventListener("click", () => {
+    if (!mobileNav) return;
+    const isOpen = mobileNav.hidden === false;
+    if (isOpen) closeMobileNav();
+    else openMobileNav();
+  });
+
+  // Close mobile nav on link click
+  document.querySelectorAll(".mobile-nav a").forEach((a) => {
+    a.addEventListener("click", () => closeMobileNav());
+  });
+
+  // Close on escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMobileNav();
+  });
+
+  // -----------------------
+  // Reveal on scroll
+  // -----------------------
+  const revealEls = Array.from(document.querySelectorAll(".reveal"));
+  if (!prefersReducedMotion && revealEls.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    revealEls.forEach((el) => io.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("is-visible"));
+  }
+
+  // -----------------------
+  // Count-up stats (once)
+  // -----------------------
+  const statNumbers = Array.from(document.querySelectorAll(".stat strong[data-count]"));
+  if (statNumbers.length) {
+    const animateCount = (el) => {
+      const target = Number(el.dataset.count || "0");
+      const start = 0;
+      const duration = 1100;
+      const startTime = performance.now();
+
+      const tick = (now) => {
+        const t = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const value = Math.round(start + (target - start) * eased);
+        el.textContent = String(value);
+        if (t < 1) requestAnimationFrame(tick);
+      };
+
+      requestAnimationFrame(tick);
+    };
+
+    if (!prefersReducedMotion) {
+      const statsSection = document.querySelector("#numbers");
+      if (statsSection) {
+        const ioStats = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                statNumbers.forEach((n) => animateCount(n));
+                ioStats.disconnect();
+              }
+            });
+          },
+          { threshold: 0.25 }
+        );
+        ioStats.observe(statsSection);
+      } else {
+        statNumbers.forEach((n) => animateCount(n));
+      }
+    } else {
+      statNumbers.forEach((n) => {
+        n.textContent = String(n.dataset.count || "0");
+      });
+    }
+  }
+
+  // -----------------------
+  // FAQ accordion (single open)
+  // -----------------------
+  document.querySelectorAll(".faq-item").forEach((item) => {
+    const btn = item.querySelector(".faq-question");
+    const ans = item.querySelector(".faq-answer");
+    if (!btn || !ans) return;
+
+    btn.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+
+      // close others
+      document.querySelectorAll(".faq-item.active").forEach((openItem) => {
+        if (openItem !== item) {
+          openItem.classList.remove("active");
+          const b = openItem.querySelector(".faq-question");
+          b?.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      item.classList.toggle("active", !isActive);
+      btn.setAttribute("aria-expanded", String(!isActive));
+    });
+  });
+
+  // -----------------------
+  // Scrollspy: active link
+  // -----------------------
+  function updateActiveNavLink() {
+    const y = window.scrollY + 140; // offset for fixed header
+    let currentId = null;
+
+    for (const section of sections) {
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+      if (y >= top && y < bottom) {
+        currentId = section.id;
+        break;
+      }
+    }
+
+    navLinks.forEach((a) => {
+      const href = a.getAttribute("href") || "";
+      const id = href.startsWith("#") ? href.slice(1) : null;
+      a.classList.toggle("active", id && id === currentId);
+    });
+  }
+
+  // -----------------------
+  // Language toggle (simple)
+  // -----------------------
+  const langBtns = Array.from(document.querySelectorAll(".lang-toggle button"));
+  const transEls = Array.from(document.querySelectorAll("[data-mk][data-en]"));
+
+  const setLang = (lang) => {
+    langBtns.forEach((b) => b.classList.toggle("active", b.dataset.lang === lang));
+    transEls.forEach((el) => {
+      el.textContent = lang === "en" ? el.dataset.en : el.dataset.mk;
+    });
+    localStorage.setItem("ba_lang", lang);
+    document.documentElement.lang = lang === "en" ? "en" : "mk";
+  };
+
+  langBtns.forEach((btn) => {
+    btn.addEventListener("click", () => setLang(btn.dataset.lang));
+  });
+
+  const saved = localStorage.getItem("ba_lang");
+  if (saved === "en" || saved === "mk") setLang(saved);
+
+  // -----------------------
+  // Sponsor form (front-end UX only)
+  // -----------------------
+  const sponsorForm = document.querySelector("#sponsorForm");
+  sponsorForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // This is UI-only for now. When you connect a backend/service, replace this.
+    sponsorForm.reset();
+    alert("Формата е испратена. Ќе ве контактираме наскоро.");
+  });
+});
