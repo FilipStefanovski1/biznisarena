@@ -1445,3 +1445,334 @@ textarea:focus {
     width: 100%;
   }
 }
+
+/* =====================
+   SPEAKERS PAGE HERO
+===================== */
+
+.page-hero {
+  padding: 120px 24px 72px;
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(900px 420px at 15% 20%, rgba(245, 180, 0, 0.10), transparent 55%),
+    radial-gradient(800px 380px at 85% 80%, rgba(198, 40, 40, 0.10), transparent 55%),
+    #0b0b0b;
+}
+
+.page-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 14px;
+}
+
+.page-title {
+  font-size: clamp(2.6rem, 5.2vw, 4.6rem);
+  font-weight: 950;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.page-lead {
+  color: var(--muted);
+  max-width: 720px;
+  line-height: 1.75;
+  margin-bottom: 26px;
+}
+
+.page-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* =====================
+   NAV ACTIVE (no random hover default)
+===================== */
+
+.nav-menu a.active {
+  color: var(--white);
+}
+
+.nav-menu a.active::after {
+  width: 100%;
+}
+
+/* =====================
+   MOBILE NAV BASIC
+===================== */
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.18);
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 18px;
+  margin: 5px auto;
+  background: rgba(255,255,255,0.75);
+}
+
+.mobile-nav {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: rgba(10,10,12,0.96);
+}
+
+.mobile-nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 14px 18px 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.mobile-nav-inner a {
+  padding: 12px 10px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.mobile-nav-inner a.active {
+  border-color: rgba(245,180,0,0.25);
+  color: #fff;
+}
+
+.mobile-cta {
+  margin-top: 6px;
+}
+
+/* show toggle on mobile */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: inline-block;
+  }
+}
+
+/* =====================
+   FEATURED SPEAKER CARDS (like screenshot, more pro)
+===================== */
+
+.speaker-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.speaker-feature-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background:
+    radial-gradient(700px 420px at 20% 35%, var(--glowA, rgba(245,180,0,0.22)), transparent 55%),
+    radial-gradient(680px 420px at 80% 65%, var(--glowB, rgba(198,40,40,0.18)), transparent 55%),
+    linear-gradient(180deg, rgba(18,18,20,0.92), rgba(10,10,12,0.96));
+  display: grid;
+  grid-template-columns: 0.95fr 1.25fr;
+  min-height: 360px;
+  box-shadow: 0 26px 70px rgba(0,0,0,0.55);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.speaker-feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 6px,
+      rgba(0,0,0,0.00) 6px,
+      rgba(0,0,0,0.00) 14px
+    );
+  opacity: 0.10;
+  pointer-events: none;
+}
+
+.speaker-feature-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(245,180,0,0.18);
+  box-shadow: 0 34px 90px rgba(0,0,0,0.62);
+}
+
+.speaker-feature-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.speaker-feature-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.02);
+  transform: scale(1.02);
+  transition: transform 0.6s ease;
+}
+
+.speaker-feature-card:hover .speaker-feature-media img {
+  transform: scale(1.06);
+}
+
+/* Soft vignette on image */
+.speaker-feature-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.12),
+    rgba(0,0,0,0.58)
+  );
+  pointer-events: none;
+}
+
+.speaker-feature-content {
+  position: relative;
+  z-index: 1;
+  padding: 46px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.speaker-feature-name {
+  font-size: 1.05rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.speaker-feature-role {
+  color: rgba(245,180,0,0.92);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.speaker-feature-bio {
+  color: rgba(255,255,255,0.72);
+  line-height: 1.75;
+  font-size: 0.95rem;
+  max-width: 520px;
+}
+
+.speaker-feature-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.btn.btn-tight {
+  padding: 13px 18px;
+  font-size: 0.72rem;
+}
+
+/* tools row */
+.speakers-tools {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.speakers-search input {
+  width: min(520px, 100%);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  padding: 12px 14px;
+  color: #fff;
+  outline: none;
+}
+
+.speakers-search input:focus {
+  border-color: rgba(245,180,0,0.45);
+}
+
+.speakers-note {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.9rem;
+}
+
+/* compact grid spacing */
+.speakers-grid--compact {
+  margin-top: 26px;
+}
+
+@media (max-width: 1100px) {
+  .speaker-feature-card {
+    grid-template-columns: 1fr;
+  }
+
+  .speaker-feature-media {
+    height: 320px;
+  }
+
+  .speaker-feature-content {
+    padding: 34px 26px;
+  }
+}
+
+@media (max-width: 900px) {
+  .speaker-feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================
+   LinkedIn button (person-linkedin)
+===================== */
+
+.person-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 16px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.03);
+
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+
+  color: #0a66c2;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.person-linkedin:hover {
+  transform: translateY(-2px);
+  border-color: rgba(10, 102, 194, 0.55);
+  background: rgba(10, 102, 194, 0.10);
+}
+
+.person-linkedin svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: currentColor;
+}
