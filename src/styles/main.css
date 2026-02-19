@@ -1812,15 +1812,15 @@ textarea:focus {
 .org-logos {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 22px;
 }
 
 .org-logo {
-  height: 22px;
+  height: 90px;          /* was ~22px */
   width: auto;
-  max-width: 180px;
+  max-width: 240px;
   object-fit: contain;
-  opacity: 0.78;
+  opacity: 0.9;
   filter: grayscale(1) contrast(1.05);
 }
 
@@ -1828,7 +1828,7 @@ textarea:focus {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: rgba(245,180,0,0.55); /* subtle accent */
+  background: rgba(255, 204, 62, 0.55); /* subtle accent */
   opacity: 0.9;
 }
 
