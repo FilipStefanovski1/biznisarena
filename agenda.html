@@ -12,15 +12,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Biznis Arena" />
-<link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Biznis Arena" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
 
@@ -49,7 +52,7 @@
         </a>
 
         <nav class="nav-menu" aria-label="Навигација">
-          <a href="/agenda.html">Агенда</a>
+          <a class="active" href="/agenda.html">Агенда</a>
           <a href="/speakers.html">Говорници</a>
           <a href="/partners.html">Партнери</a>
           <a href="/expo.html">Експо</a>
@@ -74,7 +77,7 @@
 
       <div class="mobile-nav" id="mobileNav" hidden>
         <div class="mobile-nav-inner">
-          <a href="/agenda.html">Агенда</a>
+          <a href="/agenda.html" class="active">Агенда</a>
           <a href="/speakers.html">Говорници</a>
           <a href="/partners.html">Партнери</a>
           <a href="/expo.html">Експо</a>
@@ -87,69 +90,115 @@
     </header>
 
     <main>
-      <section class="section dark" style="padding-top: 160px;">
-        <div class="container">
-          <div class="section-head">
-            <h1 class="section-title">АГЕНДА</h1>
-            <p class="section-sub">
-              Ова е структура на програмата. Точните часови и имиња ќе се ажурираат како што се финализираат сегментите.
+      <!-- AGENDA PAGE (redesign like reference) -->
+      <section class="agenda-page">
+        <div class="container agenda-layout">
+          <!-- LEFT -->
+          <aside class="agenda-left">
+            <div class="agenda-sparkles" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+
+            <h1 class="agenda-title">Програма</h1>
+
+            <p class="agenda-desc">
+              Преглед на програмата за 1 октомври 2026. Деталите и точните часови може да се менуваат
+              како што се финализираат сегментите.
             </p>
+
+            <div class="agenda-left-actions">
+              <a class="agenda-outline-btn" href="#location">
+  Локација <span aria-hidden="true">→</span>
+</a>
+              </a>
+            </div>
+          </aside>
+
+          <!-- RIGHT -->
+          <div class="agenda-right" aria-label="Агенда листа">
+            <details class="agenda-row">
+              <summary class="agenda-summary">
+                <span class="agenda-time">09:30–10:00</span>
+                <span class="agenda-name">Отворање и добредојде</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>Краток вовед во концептот на настанот, денешната структура и очекувани резултати.</p>
+              </div>
+            </details>
+
+            <details class="agenda-row">
+              <summary class="agenda-summary">
+                <span class="agenda-time">10:00–12:00</span>
+                <span class="agenda-name">BrandTalks</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>Фокусирани говори со конкретни стратегии за раст, позиционирање и градење доверба.</p>
+              </div>
+            </details>
+
+            <details class="agenda-row">
+              <summary class="agenda-summary">
+                <span class="agenda-time">12:00–13:00</span>
+                <span class="agenda-name">Пауза + Експо</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>Експо зона, демонстрации, дегустации и B2B разговори со компании и партнери.</p>
+              </div>
+            </details>
+
+            <details class="agenda-row">
+              <summary class="agenda-summary">
+                <span class="agenda-time">13:00–15:00</span>
+                <span class="agenda-name">Панели</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>Дискусии за бренд стратегија, продажни канали, извоз и пазарно позиционирање.</p>
+              </div>
+            </details>
+
+            <details class="agenda-row">
+              <summary class="agenda-summary">
+                <span class="agenda-time">15:30–17:00</span>
+                <span class="agenda-name">Натпревар (Pitch)</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>Pitch сегмент за компании подготвени за интернационален настап и раст.</p>
+              </div>
+            </details>
+
+            <details class="agenda-row">
+              <summary class="agenda-summary">
+                <span class="agenda-time">17:00–19:00</span>
+                <span class="agenda-name">Networking</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>Структурирано и неформално вмрежување со гости, говорници и партнери.</p>
+              </div>
+            </details>
+
+            <div class="agenda-actions">
+              <a class="btn primary" href="/tickets.html">Купи карта</a>
+              <a class="btn ghost" href="/contact.html">Контакт</a>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div class="cards cards-3">
-            <div class="card">
-              <h3>Отворање</h3>
-              <p>Добредојде, контекст за настанот и главни цели.</p>
-              <p style="margin-top: 10px; color: rgba(255,255,255,0.55);">
-                Пример: 09:30 – 10:00
-              </p>
-            </div>
-
-            <div class="card">
-              <h3>BrandTalks</h3>
-              <p>Кратки, фокусирани говори со практични стратегии и реални примери.</p>
-              <p style="margin-top: 10px; color: rgba(255,255,255,0.55);">
-                Пример: 10:00 – 12:00
-              </p>
-            </div>
-
-            <div class="card">
-              <h3>Пауза + Експо</h3>
-              <p>Време за expo зона, демонстрации и средби со партнери.</p>
-              <p style="margin-top: 10px; color: rgba(255,255,255,0.55);">
-                Пример: 12:00 – 13:00
-              </p>
-            </div>
-
-            <div class="card">
-              <h3>Панели</h3>
-              <p>Дискусии за раст, позиционирање, извоз и продажни канали.</p>
-              <p style="margin-top: 10px; color: rgba(255,255,255,0.55);">
-                Пример: 13:00 – 15:00
-              </p>
-            </div>
-
-            <div class="card">
-              <h3>Натпревар</h3>
-              <p>Pitch сегмент за компании подготвени за интернационален настап.</p>
-              <p style="margin-top: 10px; color: rgba(255,255,255,0.55);">
-                Пример: 15:30 – 17:00
-              </p>
-            </div>
-
-            <div class="card">
-              <h3>Networking</h3>
-              <p>Структурирано + неформално вмрежување со гости и говорници.</p>
-              <p style="margin-top: 10px; color: rgba(255,255,255,0.55);">
-                Пример: 17:00 – 19:00
-              </p>
-            </div>
-          </div>
-
-          <div style="margin-top: 34px;">
-            <a class="btn primary" href="/tickets.html">Купи карта</a>
-            <a class="btn ghost" href="/contact.html" style="margin-left: 10px;">Контакт</a>
-          </div>
+      <section id="location" class="section map-section">
+        <div class="container">
+          <iframe
+            class="map-embed"
+            src="https://www.google.com/maps/d/u/0/embed?mid=1PRh9R5asfM7bmgpWH7prBBrhnXaqf8I&ehbc=2E312F"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Локација на настанот"
+          ></iframe>
         </div>
       </section>
 
