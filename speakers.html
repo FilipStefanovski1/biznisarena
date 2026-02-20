@@ -12,24 +12,22 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/og.jpg" />
 
-    <!-- Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
       rel="stylesheet"
     />
 
-    <!-- CSS -->
     <link rel="stylesheet" href="/src/styles/main.css" />
+
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Biznis Arena" />
-<link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Biznis Arena" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
 
   <body data-page="speakers">
@@ -85,7 +83,6 @@
             <button type="button" data-lang="en">EN</button>
           </div>
 
-          <!-- Mobile toggle -->
           <button
             class="nav-toggle"
             type="button"
@@ -98,7 +95,6 @@
         </div>
       </div>
 
-      <!-- Mobile Nav -->
       <div class="mobile-nav" id="mobileNav" hidden>
         <div class="mobile-nav-inner">
           <a href="agenda.html">Агенда</a>
@@ -108,7 +104,6 @@
           <a href="competition.html">Натпревар</a>
           <a href="about.html">За настанот</a>
           <a href="contact.html">Контакт</a>
-
           <a href="tickets.html" class="btn primary mobile-cta">Купи карта</a>
         </div>
       </div>
@@ -122,16 +117,49 @@
             <h2 class="section-title">ГОВОРНИЦИ</h2>
           </div>
 
-          <section class="section dark" id="partners"></section>
+          <!-- removed the empty section that caused the big gap -->
 
           <div class="speaker-feature-grid">
-            <!-- Card 1 -->
             <article
               class="speaker-feature-card"
-              style="
-                --glowA: rgba(245, 180, 0, 0.32);
-                --glowB: rgba(198, 40, 40, 0.26);
-              "
+              style="--glowA: rgba(245, 180, 0, 0.32); --glowB: rgba(198, 40, 40, 0.26);"
+            >
+              <div class="speaker-feature-media">
+                <img src="/speaker1.jpg" alt="Филип Стефановски" loading="lazy" />
+              </div>
+
+              <div class="speaker-feature-content">
+                <h3 class="speaker-feature-name">ФИЛИП СТЕФАНОВСКИ</h3>
+                <p class="speaker-feature-role">Co-Founder · Blockchain Skopje</p>
+
+                <p class="speaker-feature-bio">
+                  Краток опис од 2–3 реченици: кои резултати ги има постигнато, што ќе
+                  сподели на сцената и каква практична вредност ќе добијат посетителите.
+                </p>
+
+                <div class="speaker-feature-actions">
+                  <a
+                    href="https://www.linkedin.com/in/USERNAME/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="person-linkedin"
+                    aria-label="LinkedIn профил"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.6 0 4.263 2.37 4.263 5.455v6.286zM5.337 7.433c-1.144 0-2.069-.926-2.069-2.07 0-1.143.925-2.07 2.069-2.07 1.142 0 2.07.927 2.07 2.07 0 1.144-.928 2.07-2.07 2.07zM7.114 20.452H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.727C24 .774 23.2 0 22.222 0h.003z"
+                      />
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- duplicate cards kept as you had them -->
+            <article
+              class="speaker-feature-card"
+              style="--glowA: rgba(245, 180, 0, 0.32); --glowB: rgba(198, 40, 40, 0.26);"
             >
               <div class="speaker-feature-media">
                 <img src="/speaker1.jpg" alt="Филип Стефановски" loading="lazy" />
@@ -167,10 +195,7 @@
 
             <article
               class="speaker-feature-card"
-              style="
-                --glowA: rgba(245, 180, 0, 0.32);
-                --glowB: rgba(198, 40, 40, 0.26);
-              "
+              style="--glowA: rgba(245, 180, 0, 0.32); --glowB: rgba(198, 40, 40, 0.26);"
             >
               <div class="speaker-feature-media">
                 <img src="/speaker1.jpg" alt="Филип Стефановски" loading="lazy" />
@@ -203,46 +228,9 @@
                 </div>
               </div>
             </article>
-
-            <article
-              class="speaker-feature-card"
-              style="
-                --glowA: rgba(245, 180, 0, 0.32);
-                --glowB: rgba(198, 40, 40, 0.26);
-              "
-            >
-              <div class="speaker-feature-media">
-                <img src="/speaker1.jpg" alt="Филип Стефановски" loading="lazy" />
-              </div>
-
-              <div class="speaker-feature-content">
-                <h3 class="speaker-feature-name">ФИЛИП СТЕФАНОВСКИ</h3>
-                <p class="speaker-feature-role">Co-Founder · Blockchain Skopje</p>
-
-                <p class="speaker-feature-bio">
-                  Краток опис од 2–3 реченици: кои резултати ги има постигнато, што ќе
-                  сподели на сцената и каква практична вредност ќе добијат посетителите.
-                </p>
-
-                <div class="speaker-feature-actions">
-                  <a
-                    href="https://www.linkedin.com/in/USERNAME/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="person-linkedin"
-                    aria-label="LinkedIn профил"
-                  >
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.6 0 4.263 2.37 4.263 5.455v6.286zM5.337 7.433c-1.144 0-2.069-.926-2.069-2.07 0-1.143.925-2.07 2.069-2.07 1.142 0 2.07.927 2.07 2.07 0 1.144-.928 2.07-2.07 2.07zM7.114 20.452H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.727C24 .774 23.2 0 22.222 0h.003z"
-                      />
-                    </svg>
-                    LinkedIn
-                  </a>
-                </div>
-              </div>
-            </article>            
           </div>
+        </div>
+      </section>
 
       <!-- FOOTER -->
       <footer class="footer-main">

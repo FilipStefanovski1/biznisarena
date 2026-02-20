@@ -2059,3 +2059,123 @@ textarea:focus {
   position: relative;
   z-index: 1;
 }
+
+/* =====================
+   SPLIT SECTIONS (agenda-style, dark theme)
+===================== */
+
+.split-section {
+  padding: 96px 24px;
+  border-top: 1px solid var(--line);
+
+  /* same vibe as your other dark sections */
+  background:
+    radial-gradient(900px 420px at 15% 20%, rgba(245, 180, 0, 0.10), transparent 55%),
+    radial-gradient(800px 380px at 85% 80%, rgba(198, 40, 40, 0.10), transparent 55%),
+    #0b0b0b;
+}
+
+.split-wrap {
+  display: grid;
+  grid-template-columns: minmax(260px, 380px) 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.split-left {
+  padding-top: 6px;
+}
+
+.split-dots {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.split-dots span {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  transform: rotate(45deg);
+  opacity: 0.9;
+}
+
+.split-title {
+  margin: 0 0 14px;
+  font-size: clamp(3rem, 4.5vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.split-sub {
+  margin: 0 0 22px;
+  max-width: 34ch;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.split-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* right side grid */
+.split-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.split-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  padding: 24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.split-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.38);
+  border-color: rgba(245, 180, 0, 0.22);
+}
+
+.split-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.split-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* responsive */
+@media (max-width: 1000px) {
+  .split-wrap {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .split-sub {
+    max-width: 70ch;
+  }
+
+  .split-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .split-grid {
+    grid-template-columns: 1fr;
+  }
+}
