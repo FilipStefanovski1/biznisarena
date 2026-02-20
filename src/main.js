@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".navbar");
-  const navLinks = Array.from(document.querySelectorAll(".nav-menu a"));
-  const sections = Array.from(document.querySelectorAll("section[id]"));
   const backToTop = document.querySelector(".back-to-top");
 
+  // Desktop nav links (only used for scrollspy on sections)
+  const navLinks = Array.from(document.querySelectorAll(".nav-menu a"));
+  const sections = Array.from(document.querySelectorAll("section[id]"));
+
+  // Mobile nav
   const navToggle = document.querySelector(".nav-toggle");
   const mobileNav = document.querySelector("#mobileNav");
 
@@ -17,16 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const onScroll = () => {
     const y = window.scrollY;
 
-    if (y > 40) header.classList.add("is-scrolled");
-    else header.classList.remove("is-scrolled");
+    if (header) {
+      if (y > 40) header.classList.add("is-scrolled");
+      else header.classList.remove("is-scrolled");
+    }
 
     if (backToTop) {
       if (y > 600) backToTop.classList.add("show");
       else backToTop.classList.remove("show");
     }
 
-    // Scrollspy (desktop nav)
-    updateActiveNavLink();
+    // Scrollspy (only if we have in-page sections)
+    if (sections.length && navLinks.length) updateActiveNavLink();
   };
 
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -37,17 +42,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // -----------------------
   if (backToTop) {
     backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
     });
   }
 
   // -----------------------
   // Mobile nav toggle
   // -----------------------
+  const isMobileNavOpen = () => {
+    if (!mobileNav) return false;
+    // If hidden attribute is missing, treat it as open only when it's visible
+    return mobileNav.hidden === false;
+  };
+
   const closeMobileNav = () => {
     if (!mobileNav) return;
     mobileNav.hidden = true;
     navToggle?.setAttribute("aria-expanded", "false");
+    navToggle?.setAttribute("aria-label", "Отвори мени");
     document.body.classList.remove("no-scroll");
   };
 
@@ -55,13 +70,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!mobileNav) return;
     mobileNav.hidden = false;
     navToggle?.setAttribute("aria-expanded", "true");
+    navToggle?.setAttribute("aria-label", "Затвори мени");
     document.body.classList.add("no-scroll");
   };
 
+  // Ensure initial state is closed (important if some pages forgot hidden="")
+  if (mobileNav && typeof mobileNav.hidden !== "boolean") {
+    mobileNav.hidden = true;
+  } else if (mobileNav && mobileNav.hidden !== true) {
+    // If it starts open by accident, close it
+    closeMobileNav();
+  }
+
   navToggle?.addEventListener("click", () => {
     if (!mobileNav) return;
-    const isOpen = mobileNav.hidden === false;
-    if (isOpen) closeMobileNav();
+    if (isMobileNavOpen()) closeMobileNav();
     else openMobileNav();
   });
 
@@ -73,6 +96,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Close on escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMobileNav();
+  });
+
+  // Close if user clicks outside the menu/toggle when open
+  document.addEventListener("click", (e) => {
+    if (!mobileNav || !navToggle) return;
+    if (!isMobileNavOpen()) return;
+
+    const target = e.target;
+    const clickedInsideMenu = mobileNav.contains(target);
+    const clickedToggle = navToggle.contains(target);
+
+    if (!clickedInsideMenu && !clickedToggle) closeMobileNav();
+  });
+
+  // Close if resized to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) closeMobileNav();
   });
 
   // -----------------------
@@ -100,18 +140,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // -----------------------
   // Count-up stats (once)
   // -----------------------
-  const statNumbers = Array.from(document.querySelectorAll(".stat strong[data-count]"));
+  const statNumbers = Array.from(
+    document.querySelectorAll(".stat strong[data-count]")
+  );
+
   if (statNumbers.length) {
     const animateCount = (el) => {
       const target = Number(el.dataset.count || "0");
-      const start = 0;
       const duration = 1100;
       const startTime = performance.now();
 
       const tick = (now) => {
         const t = Math.min((now - startTime) / duration, 1);
         const eased = 1 - Math.pow(1 - t, 3);
-        const value = Math.round(start + (target - start) * eased);
+        const value = Math.round(target * eased);
         el.textContent = String(value);
         if (t < 1) requestAnimationFrame(tick);
       };
@@ -155,7 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       const isActive = item.classList.contains("active");
 
-      // close others
       document.querySelectorAll(".faq-item.active").forEach((openItem) => {
         if (openItem !== item) {
           openItem.classList.remove("active");
@@ -170,10 +211,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // -----------------------
-  // Scrollspy: active link
+  // Scrollspy: active link (only works for # anchors)
   // -----------------------
   function updateActiveNavLink() {
-    const y = window.scrollY + 140; // offset for fixed header
+    const y = window.scrollY + 140;
     let currentId = null;
 
     for (const section of sections) {
@@ -188,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.forEach((a) => {
       const href = a.getAttribute("href") || "";
       const id = href.startsWith("#") ? href.slice(1) : null;
-      a.classList.toggle("active", id && id === currentId);
+      a.classList.toggle("active", !!id && id === currentId);
     });
   }
 
@@ -199,10 +240,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const transEls = Array.from(document.querySelectorAll("[data-mk][data-en]"));
 
   const setLang = (lang) => {
-    langBtns.forEach((b) => b.classList.toggle("active", b.dataset.lang === lang));
+    langBtns.forEach((b) =>
+      b.classList.toggle("active", b.dataset.lang === lang)
+    );
+
     transEls.forEach((el) => {
       el.textContent = lang === "en" ? el.dataset.en : el.dataset.mk;
     });
+
     localStorage.setItem("ba_lang", lang);
     document.documentElement.lang = lang === "en" ? "en" : "mk";
   };
@@ -220,7 +265,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const sponsorForm = document.querySelector("#sponsorForm");
   sponsorForm?.addEventListener("submit", (e) => {
     e.preventDefault();
-    // This is UI-only for now. When you connect a backend/service, replace this.
     sponsorForm.reset();
     alert("Формата е испратена. Ќе ве контактираме наскоро.");
   });
