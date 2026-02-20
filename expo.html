@@ -12,23 +12,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="/src/styles/main.css" />
 
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Biznis Arena" />
-<link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Biznis Arena" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
 
-  <body>
-    <div class="top-ticker">
-      <div class="ticker-track">
+  <body data-page="expo">
+    <a class="skip-link" href="#main">Прескокни до содржина</a>
+
+    <div class="top-ticker" role="region" aria-label="Информации за настанот">
+      <div class="ticker-track" aria-hidden="true">
         <div class="ticker-content">
           <span>БИЗНИС АРЕНА 2026</span><span>·</span>
           <span>ЕКСПО</span><span>·</span>
@@ -54,7 +56,7 @@
           <a href="/agenda.html">Агенда</a>
           <a href="/speakers.html">Говорници</a>
           <a href="/partners.html">Партнери</a>
-          <a href="/expo.html">Експо</a>
+          <a class="active" href="/expo.html">Експо</a>
           <a href="/competition.html">Натпревар</a>
           <a href="/about.html">За настанот</a>
           <a href="/contact.html">Контакт</a>
@@ -63,7 +65,7 @@
         <div class="nav-right">
           <a href="/tickets.html" class="nav-cta" data-mk="Карти" data-en="Tickets">Карти</a>
 
-          <div class="lang-toggle">
+          <div class="lang-toggle" aria-label="Избор на јазик">
             <button type="button" data-lang="mk" class="active">МК</button>
             <button type="button" data-lang="en">EN</button>
           </div>
@@ -79,7 +81,7 @@
           <a href="/agenda.html">Агенда</a>
           <a href="/speakers.html">Говорници</a>
           <a href="/partners.html">Партнери</a>
-          <a href="/expo.html">Експо</a>
+          <a class="active" href="/expo.html">Експо</a>
           <a href="/competition.html">Натпревар</a>
           <a href="/about.html">За настанот</a>
           <a href="/contact.html">Контакт</a>
@@ -88,44 +90,162 @@
       </div>
     </header>
 
-    <main>
-      <section class="section dark" style="padding-top: 160px;">
-        <div class="container">
-          <div class="section-head">
-            <h1 class="section-title">ЕКСПО ЗОНА</h1>
-            <p class="section-sub">
-              Простор за презентации, демонстрации и разговори со компании што градат силни производи и брендови.
+    <main id="main">
+      <!-- AGENDA-STYLE SPLIT PAGE -->
+      <section class="page-split expo-page">
+        <div class="container page-layout">
+          <!-- LEFT (sticky like agenda) -->
+          <aside class="page-left">
+            <div class="page-sparkles" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+
+            <h1 class="page-title">Експо зона</h1>
+
+            <p class="page-desc">
+              Простор за презентации, демонстрации и директен контакт со компании што градат
+              силни производи и брендови. Очекувај штандови, активирања и B2B разговори.
             </p>
-          </div>
 
-          <div class="cards cards-3">
-            <div class="card">
-              <h3>Што има во експо</h3>
-              <p>Штандови, демонстрации, дегустации (каде што е релевантно) и директен контакт.</p>
+            <div class="page-left-actions">
+              <a class="page-outline-btn" href="#what">
+                Што има <span aria-hidden="true">→</span>
+              </a>
+              <a class="page-outline-btn" href="/contact.html">
+                Пријави штанд <span aria-hidden="true">→</span>
+              </a>
             </div>
+          </aside>
 
-            <div class="card">
-              <h3>За кого е</h3>
-              <p>Купувачи, партнери, медиуми и компании што бараат соработки.</p>
+          <!-- RIGHT (accordion list like agenda) -->
+          <div class="agenda-right" aria-label="Информации за експо зоната">
+            <details class="agenda-row" id="what" open>
+              <summary class="agenda-summary">
+                <span class="agenda-time">ШТО</span>
+                <span class="agenda-name">Што има во експо</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>Штандови, демонстрации, дегустации (каде што е релевантно) и директен контакт со тимови.</p>
+              </div>
+            </details>
+
+            <details class="agenda-row">
+              <summary class="agenda-summary">
+                <span class="agenda-time">ЗА КОГО</span>
+                <span class="agenda-name">За кого е</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>Купувачи, партнери, медиуми и компании што бараат нови соработки и добавувачи.</p>
+              </div>
+            </details>
+
+            <details class="agenda-row">
+              <summary class="agenda-summary">
+                <span class="agenda-time">КАКО</span>
+                <span class="agenda-name">Како да учествуваш</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>Ако си компанија и сакаш штанд, остави контакт — ќе добиеш пакет понуда и логистика.</p>
+              </div>
+            </details>
+
+            <details class="agenda-row">
+              <summary class="agenda-summary">
+                <span class="agenda-time">B2B</span>
+                <span class="agenda-name">Цел на зоната</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>Да се создадат директни разговори, потенцијални договори и нови партнерства на лице место.</p>
+              </div>
+            </details>
+
+            <div class="agenda-actions">
+              <a class="btn primary" href="/contact.html">Пријави штанд</a>
+              <a class="btn ghost" href="/tickets.html">Купи карта</a>
             </div>
-
-            <div class="card">
-              <h3>Како да учествуваш</h3>
-              <p>Ако си компанија и сакаш штанд, остави контакт и ќе добиеш пакет понуда.</p>
-            </div>
-          </div>
-
-          <div style="margin-top: 24px;">
-            <a class="btn primary" href="/contact.html">Пријави штанд</a>
           </div>
         </div>
       </section>
 
       <button class="back-to-top" type="button" aria-label="Назад горе">↑</button>
 
+      <!-- FOOTER -->
       <footer class="footer-main">
+        <div class="footer-container">
+          <div class="footer-col footer-brand">
+            <div class="footer-logo">
+              <img src="/logotext.png" alt="Biznis Arena 2026 Logo" />
+            </div>
+
+            <p class="footer-desc">
+              Најголемиот настан за бизнис, технологија и инвестиции во регионот.
+              Бидете дел од иднината.
+            </p>
+
+            <div class="footer-socials">
+              <a
+                href="https://www.instagram.com/biznisarena/"
+                class="social-circle"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
+                  <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                </svg>
+              </a>
+
+              <a href="#" class="social-circle" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M8 11v5M8 8h.01M12 16v-3a2 2 0 114 0v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </a>
+
+              <a href="#" class="social-circle" aria-label="X">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-heading">НАВИГАЦИЈА</h4>
+            <ul class="footer-links">
+              <li><a href="#about">ПОЧЕТНА</a></li>
+              <li><a href="#agenda">ПРОГРАМА</a></li>
+              <li><a href="#tickets">БИЛЕТИ</a></li>
+              <li><a href="#partners">ПАРТНЕРИ</a></li>
+              <li><a href="#contact">КОНТАКТ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-heading">БИЛТЕН</h4>
+            <p class="footer-subtext">ПРИЈАВЕТЕ СЕ ЗА НАЈНОВИ ИНФОРМАЦИИ</p>
+
+            <div class="newsletter">
+              <input type="email" placeholder="EMAIL АДРЕСА" aria-label="Email за билтен" />
+              <button type="button" aria-label="Пријави се">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 8l8 5 8-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div class="footer-bottom">
           <span>© 2026 BIZNIS ARENA. СИТЕ ПРАВА СЕ ЗАДРЖАНИ.</span>
+
           <div class="footer-legal">
             <a href="#">ПОЛИТИКА НА ПРИВАТНОСТ</a>
             <a href="#">УСЛОВИ НА КОРИСТЕЊЕ</a>

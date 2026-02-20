@@ -12,38 +12,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="/src/styles/main.css" />
 
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Biznis Arena" />
-<link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Biznis Arena" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
 
-  <body>
-    <div class="top-ticker">
-      <div class="ticker-track">
+  <body data-page="competition">
+    <a class="skip-link" href="#main">Прескокни до содржина</a>
+
+    <!-- TOP TICKER -->
+    <div class="top-ticker" role="region" aria-label="Информации за настанот">
+      <div class="ticker-track" aria-hidden="true">
         <div class="ticker-content">
           <span>БИЗНИС АРЕНА 2026</span><span>·</span>
           <span>НАТПРЕВАР</span><span>·</span>
           <span>PITCH · ИЗВОЗ</span><span>·</span>
           <span>1 ОКТОМВРИ · СКОПЈЕ</span><span>·</span>
+          <span>ЕКСПО · ВМРЕЖУВАЊЕ</span><span>·</span>
         </div>
         <div class="ticker-content">
           <span>БИЗНИС АРЕНА 2026</span><span>·</span>
           <span>НАТПРЕВАР</span><span>·</span>
           <span>PITCH · ИЗВОЗ</span><span>·</span>
           <span>1 ОКТОМВРИ · СКОПЈЕ</span><span>·</span>
+          <span>ЕКСПО · ВМРЕЖУВАЊЕ</span><span>·</span>
         </div>
       </div>
     </div>
 
+    <!-- NAVBAR -->
     <header class="navbar">
       <div class="nav-inner">
         <a class="nav-logo" href="/" aria-label="Почетна">
@@ -55,7 +61,7 @@
           <a href="/speakers.html">Говорници</a>
           <a href="/partners.html">Партнери</a>
           <a href="/expo.html">Експо</a>
-          <a href="/competition.html">Натпревар</a>
+          <a class="active" href="/competition.html">Натпревар</a>
           <a href="/about.html">За настанот</a>
           <a href="/contact.html">Контакт</a>
         </nav>
@@ -63,7 +69,7 @@
         <div class="nav-right">
           <a href="/tickets.html" class="nav-cta" data-mk="Карти" data-en="Tickets">Карти</a>
 
-          <div class="lang-toggle">
+          <div class="lang-toggle" aria-label="Избор на јазик">
             <button type="button" data-lang="mk" class="active">МК</button>
             <button type="button" data-lang="en">EN</button>
           </div>
@@ -74,13 +80,14 @@
         </div>
       </div>
 
+      <!-- Mobile Nav -->
       <div class="mobile-nav" id="mobileNav" hidden>
         <div class="mobile-nav-inner">
           <a href="/agenda.html">Агенда</a>
           <a href="/speakers.html">Говорници</a>
           <a href="/partners.html">Партнери</a>
           <a href="/expo.html">Експо</a>
-          <a href="/competition.html">Натпревар</a>
+          <a class="active" href="/competition.html">Натпревар</a>
           <a href="/about.html">За настанот</a>
           <a href="/contact.html">Контакт</a>
           <a href="/tickets.html" class="btn primary mobile-cta">Купи карта</a>
@@ -88,53 +95,102 @@
       </div>
     </header>
 
-    <main>
-      <section class="section dark" style="padding-top: 160px;">
-        <div class="container">
-          <div class="section-head">
-            <h1 class="section-title">НАТПРЕВАР (PITCH)</h1>
-            <p class="section-sub">
-              Сегмент за компании подготвени за интернационален настап: јасен план, јасно позиционирање и реална изводливост.
+    <main id="main">
+      <!-- AGENDA-STYLE SPLIT PAGE -->
+      <section class="page-split competition-page">
+        <div class="container page-layout">
+          <!-- LEFT (sticky) -->
+          <aside class="page-left">
+            <div class="page-sparkles" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+
+            <h1 class="page-title">Натпревар</h1>
+
+            <p class="page-desc">
+              Pitch сегмент за компании подготвени за интернационален настап: јасен план,
+              јасно позиционирање и реална изводливост. Форматот ќе се прецизира како што
+              се финализираат сегментите.
             </p>
-          </div>
 
-          <div class="cards cards-3">
-            <div class="card">
-              <h3>Кој аплицира</h3>
-              <p>Компании со производ/услуга и конкретен план за раст надвор од Македонија.</p>
+            <div class="page-left-actions">
+              <a class="page-outline-btn" href="#process">
+                Процес <span aria-hidden="true">→</span>
+              </a>
+              <a class="page-outline-btn" href="/contact.html">
+                Аплицирај <span aria-hidden="true">→</span>
+              </a>
             </div>
-            <div class="card">
-              <h3>Критериуми</h3>
-              <p>Пазарна логика, канал, диференцијација, продажна стратегија, капацитет за изведба.</p>
-            </div>
-            <div class="card">
-              <h3>Финале</h3>
-              <p>Pitch на сцена пред жири и публика, со прогласување победник.</p>
-            </div>
-          </div>
+          </aside>
 
-          <div class="section-head" style="margin-top: 42px;">
-            <h2 class="section-title">Процес</h2>
-            <p class="section-sub">Краток и јасен flow. Деталите ќе се објават кога ќе се заклучи форматот.</p>
-          </div>
+          <!-- RIGHT -->
+          <div class="agenda-right" aria-label="Информации за натпреварот">
+            <!-- Section 1 -->
+            <details class="agenda-row" open>
+              <summary class="agenda-summary">
+                <span class="agenda-time">СЕГМЕНТ</span>
+                <span class="agenda-name">Натпревар (Pitch)</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>
+                  Финалисти презентираат на сцена пред жири и публика. Целта е да се изберат
+                  компании со најсилен потенцијал за раст и извоз, со реален план за изведба.
+                </p>
+              </div>
+            </details>
 
-          <div class="cards cards-3">
-            <div class="card">
-              <h3>1) Апликација</h3>
-              <p>Кратка пријава со основни информации и целен пазар.</p>
-            </div>
-            <div class="card">
-              <h3>2) Селекција</h3>
-              <p>Избор на финалисти според критериуми.</p>
-            </div>
-            <div class="card">
-              <h3>3) Pitch</h3>
-              <p>Презентација на настанот + резултати.</p>
-            </div>
-          </div>
+            <details class="agenda-row">
+              <summary class="agenda-summary">
+                <span class="agenda-time">КОЈ</span>
+                <span class="agenda-name">Кој аплицира</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>Компании со производ/услуга и конкретен план за раст надвор од Македонија.</p>
+              </div>
+            </details>
 
-          <div style="margin-top: 24px;">
-            <a class="btn primary" href="/contact.html">Аплицирај / Контакт</a>
+            <details class="agenda-row">
+              <summary class="agenda-summary">
+                <span class="agenda-time">КАКО</span>
+                <span class="agenda-name">Критериуми</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>Пазарна логика, канал, диференцијација, продажна стратегија и капацитет за изведба.</p>
+              </div>
+            </details>
+
+            <details class="agenda-row">
+              <summary class="agenda-summary">
+                <span class="agenda-time">ФИНАЛЕ</span>
+                <span class="agenda-name">Што добиваат финалистите</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p>Pitch позиција, видливост пред публика, нови партнерства и медиумска експозиција.</p>
+              </div>
+            </details>
+
+            <!-- Process -->
+            <details class="agenda-row" id="process">
+              <summary class="agenda-summary">
+                <span class="agenda-time">FLOW</span>
+                <span class="agenda-name">Процес</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="agenda-panel">
+                <p style="margin-bottom: 10px;"><strong>1) Апликација</strong> — Кратка пријава со основни информации и целен пазар.</p>
+                <p style="margin-bottom: 10px;"><strong>2) Селекција</strong> — Избор на финалисти според критериуми.</p>
+                <p><strong>3) Pitch</strong> — Презентација на настанот + резултати.</p>
+              </div>
+            </details>
+
+            <div class="agenda-actions">
+              <a class="btn primary" href="/contact.html">Аплицирај / Контакт</a>
+              <a class="btn ghost" href="/tickets.html">Купи карта</a>
+            </div>
           </div>
         </div>
       </section>

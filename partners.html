@@ -6,42 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Партнери."
+      content="Партнери на Бизнис Арена 2026 — компании и организации кои ја поддржуваат конференцијата."
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/src/styles/main.css" />
-
+    <!-- Favicons -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Biznis Arena" />
-<link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Biznis Arena" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
 
-  <body>
-    <div class="top-ticker">
-      <div class="ticker-track">
+  <body data-page="partners">
+    <a class="skip-link" href="#main">Прескокни до содржина</a>
+
+    <!-- TOP TICKER -->
+    <div class="top-ticker" role="region" aria-label="Информации за настанот">
+      <div class="ticker-track" aria-hidden="true">
         <div class="ticker-content">
           <span>БИЗНИС АРЕНА 2026</span><span>·</span>
           <span>ПАРТНЕРИ</span><span>·</span>
           <span>1 ОКТОМВРИ · СКОПЈЕ</span><span>·</span>
+          <span>ЕКСПО · ПИЧ · ВМРЕЖУВАЊЕ</span><span>·</span>
         </div>
         <div class="ticker-content">
           <span>БИЗНИС АРЕНА 2026</span><span>·</span>
           <span>ПАРТНЕРИ</span><span>·</span>
           <span>1 ОКТОМВРИ · СКОПЈЕ</span><span>·</span>
+          <span>ЕКСПО · ПИЧ · ВМРЕЖУВАЊЕ</span><span>·</span>
         </div>
       </div>
     </div>
 
+    <!-- NAVBAR -->
     <header class="navbar">
       <div class="nav-inner">
         <a class="nav-logo" href="/" aria-label="Почетна">
@@ -51,7 +58,7 @@
         <nav class="nav-menu" aria-label="Навигација">
           <a href="/agenda.html">Агенда</a>
           <a href="/speakers.html">Говорници</a>
-          <a href="/partners.html">Партнери</a>
+          <a class="active" href="/partners.html">Партнери</a>
           <a href="/expo.html">Експо</a>
           <a href="/competition.html">Натпревар</a>
           <a href="/about.html">За настанот</a>
@@ -61,7 +68,7 @@
         <div class="nav-right">
           <a href="/tickets.html" class="nav-cta" data-mk="Карти" data-en="Tickets">Карти</a>
 
-          <div class="lang-toggle">
+          <div class="lang-toggle" aria-label="Избор на јазик">
             <button type="button" data-lang="mk" class="active">МК</button>
             <button type="button" data-lang="en">EN</button>
           </div>
@@ -72,11 +79,12 @@
         </div>
       </div>
 
+      <!-- Mobile Nav -->
       <div class="mobile-nav" id="mobileNav" hidden>
         <div class="mobile-nav-inner">
           <a href="/agenda.html">Агенда</a>
           <a href="/speakers.html">Говорници</a>
-          <a href="/partners.html">Партнери</a>
+          <a class="active" href="/partners.html">Партнери</a>
           <a href="/expo.html">Експо</a>
           <a href="/competition.html">Натпревар</a>
           <a href="/about.html">За настанот</a>
@@ -86,71 +94,98 @@
       </div>
     </header>
 
-    <main>
-      <section class="section dark" style="padding-top: 160px;">
-        <div class="container">
-          <div class="section-head">
-            <h1 class="section-title">ПАРТНЕРИ</h1>
-          </div>
+    <main id="main">
+      <!-- AGENDA-STYLE SPLIT PAGE -->
+      <section class="page-split partners-page">
+        <div class="container page-layout">
+          <!-- LEFT (sticky) -->
+          <aside class="page-left">
+            <div class="page-sparkles" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
 
-          <section class="section dark" id="partners">
+            <h1 class="page-title">Партнери</h1>
 
-<div class="partners-grid">
-  <div class="partner-card reveal">
-    <img src="/partners/Sponsor.png" alt="ETHRome" loading="lazy" />
-  </div>
+            <p class="page-desc">
+              Компании и организации кои стојат зад Бизнис Арена 2026. Доколку сакате да се
+              приклучите како партнер, оставете порака и ќе ви испратиме пакет со опции.
+            </p>
 
-  <div class="partner-card reveal">
-    <img src="/partners/Sponsor.png" alt="ETHRome" loading="lazy" />
-  </div>
+            <div class="page-left-actions">
+              <a class="page-outline-btn" href="#become-partner">
+                Станете партнер <span aria-hidden="true">→</span>
+              </a>
+              <a class="page-outline-btn" href="/tickets.html">
+                Карти <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </aside>
 
-  <div class="partner-card reveal">
-    <img src="/partners/Sponsor.png" alt="ETHRome" loading="lazy" />
-  </div>
+          <!-- RIGHT -->
+          <div class="agenda-right" aria-label="Партнери">
+            <div style="padding: 26px 0;">
+              <div class="partners-grid">
+                <div class="partner-card reveal">
+                  <img src="/partners/Sponsor.png" alt="Партнер" loading="lazy" />
+                </div>
 
-  <div class="partner-card reveal">
-    <img src="/partners/Sponsor.png" alt="ETHRome" loading="lazy" />
-  </div>
+                <div class="partner-card reveal">
+                  <img src="/partners/Sponsor.png" alt="Партнер" loading="lazy" />
+                </div>
 
-  <div class="partner-card reveal">
-    <img src="/partners/Sponsor.png" alt="ETHRome" loading="lazy" />
-  </div>
+                <div class="partner-card reveal">
+                  <img src="/partners/Sponsor.png" alt="Партнер" loading="lazy" />
+                </div>
 
-  <div class="partner-card reveal">
-    <img src="/partners/Sponsor.png" alt="ETHRome" loading="lazy" />
-  </div>
+                <div class="partner-card reveal">
+                  <img src="/partners/Sponsor.png" alt="Партнер" loading="lazy" />
+                </div>
 
-  <div class="partner-card reveal">
-    <img src="/partners/Sponsor.png" alt="ETHRome" loading="lazy" />
-  </div>
+                <div class="partner-card reveal">
+                  <img src="/partners/Sponsor.png" alt="Партнер" loading="lazy" />
+                </div>
 
-  <div class="partner-card reveal">
-    <img src="/partners/Sponsor.png" alt="ETHRome" loading="lazy" />
-  </div>
+                <div class="partner-card reveal">
+                  <img src="/partners/Sponsor.png" alt="Партнер" loading="lazy" />
+                </div>
 
-  <div class="partner-card reveal">
-    <img src="/partners/Sponsor.png" alt="ETHRome" loading="lazy" />
-  </div>
+                <div class="partner-card reveal">
+                  <img src="/partners/Sponsor.png" alt="Партнер" loading="lazy" />
+                </div>
 
-  <div class="partner-card reveal">
-    <img src="/partners/Sponsor.png" alt="ETHRome" loading="lazy" />
-  </div>
+                <div class="partner-card reveal">
+                  <img src="/partners/Sponsor.png" alt="Партнер" loading="lazy" />
+                </div>
 
-  <div class="partner-card reveal">
-    <img src="/partners/Sponsor.png" alt="ETHRome" loading="lazy" />
-  </div>
+                <div class="partner-card reveal">
+                  <img src="/partners/Sponsor.png" alt="Партнер" loading="lazy" />
+                </div>
 
-  <div class="partner-card reveal">
-    <img src="/partners/Sponsor.png" alt="ETHRome" loading="lazy" />
-  </div>
-</div>
-        </div>
-      </section>
+                <div class="partner-card reveal">
+                  <img src="/partners/Sponsor.png" alt="Партнер" loading="lazy" />
+                </div>
 
-          <p class="partners-note">Доколку сакате да станете партнер, контактирајте нè.</p>
+                <div class="partner-card reveal">
+                  <img src="/partners/Sponsor.png" alt="Партнер" loading="lazy" />
+                </div>
 
-          <div style="margin-top: 18px;">
-            <a class="btn primary" href="/contact.html">Станете партнер</a>
+                <div class="partner-card reveal">
+                  <img src="/partners/Sponsor.png" alt="Партнер" loading="lazy" />
+                </div>
+              </div>
+            </div>
+
+            <div id="become-partner" class="agenda-panel" style="padding-left: 0; padding-bottom: 0;">
+              <p style="max-width: 70ch;">
+                Доколку сакате да станете партнер, контактирајте нè и ќе ви испратиме
+                Sponsorship пакет со можности за видливост, ексклузивни бенефити и позиции.
+              </p>
+            </div>
+
+            <div class="agenda-actions">
+              <a class="btn primary" href="/contact.html">Станете партнер</a>
+              <a class="btn ghost" href="/tickets.html">Купи карта</a>
+            </div>
           </div>
         </div>
       </section>

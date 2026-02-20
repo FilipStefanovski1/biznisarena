@@ -1,3 +1,6 @@
+/* =====================
+   TOKENS
+===================== */
 :root {
   --black: #0e0e0e;
   --dark: #141414;
@@ -11,6 +14,9 @@
   --line: rgba(255, 255, 255, 0.09);
 }
 
+/* =====================
+   BASE
+===================== */
 * {
   margin: 0;
   padding: 0;
@@ -36,7 +42,7 @@ body {
 
 /* Helps anchor links not hide under fixed header */
 section[id] {
-  scroll-margin-top: 120px;
+  scroll-margin-top: 130px;
 }
 
 a {
@@ -99,7 +105,7 @@ a {
 
 .ticker-content span {
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 700; /* tweak: less shouty */
   letter-spacing: 0.14em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -166,7 +172,7 @@ a {
 
 .nav-menu a {
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 650; /* tweak: less bold */
   text-transform: uppercase;
   color: var(--muted);
   letter-spacing: 0.14em;
@@ -210,7 +216,7 @@ a {
   padding: 10px 18px;
   border: 1px solid rgba(255, 255, 255, 0.9);
   font-size: 0.72rem;
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   text-transform: uppercase;
   letter-spacing: 0.14em;
   transition: transform 0.2s ease, background 0.2s ease;
@@ -233,7 +239,7 @@ a {
   color: var(--muted2);
   padding: 8px 10px;
   font-size: 0.7rem;
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   letter-spacing: 0.14em;
   cursor: pointer;
 }
@@ -248,7 +254,7 @@ a {
   width: 44px;
   height: 42px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  background: transparent;
+  background: rgba(0, 0, 0, 0.18);
   display: none;
   align-items: center;
   justify-content: center;
@@ -268,31 +274,36 @@ a {
 /* Mobile nav panel */
 .mobile-nav {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(14, 14, 14, 0.92);
+  background: rgba(10, 10, 12, 0.96);
   backdrop-filter: blur(10px);
 }
 
 .mobile-nav-inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 18px 32px 26px;
+  padding: 14px 18px 18px;
   display: grid;
-  gap: 14px;
+  gap: 10px;
 }
 
-.mobile-nav a {
-  font-size: 0.85rem;
-  font-weight: 900;
-  letter-spacing: 0.14em;
+.mobile-nav-inner a {
+  padding: 12px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.03);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.78);
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-weight: 800;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.mobile-nav-inner a.active {
+  border-color: rgba(245, 180, 0, 0.25);
+  color: #fff;
 }
 
 .mobile-cta {
-  margin-top: 10px;
-  width: 100%;
+  margin-top: 6px;
 }
 
 body.no-scroll {
@@ -332,23 +343,22 @@ body.no-scroll {
   position: relative;
   z-index: 2;
   max-width: 980px;
-  margin: 0 auto;          /* was margin-left: 8% */
+  margin: 0 auto;
   padding: 64px 24px;
-  text-align: center;      /* centers h1, p, etc */
+  text-align: center;
 }
-
 
 .hero-meta {
   color: var(--yellow);
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 650; /* tweak */
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .hero h1 {
   font-size: clamp(3rem, 6vw, 5.2rem);
-  font-weight: 950;
+  font-weight: 900; /* tweak: less heavy */
   line-height: 1.05;
   margin: 22px 0 16px;
   letter-spacing: -0.02em;
@@ -359,21 +369,23 @@ body.no-scroll {
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.7;
-  margin: 0 auto 34px;     /* was margin-bottom only */
+  margin: 0 auto 34px;
 }
 
 .hero-actions {
   display: flex;
-  justify-content: center; /* center buttons row */
+  justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
 }
 
-
+/* =====================
+   BUTTONS
+===================== */
 .btn {
   padding: 16px 26px;
   font-size: 0.75rem;
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   letter-spacing: 0.14em;
   text-transform: uppercase;
   border: 1px solid transparent;
@@ -403,6 +415,11 @@ body.no-scroll {
   padding: 12px 18px;
 }
 
+.btn.btn-tight {
+  padding: 13px 18px;
+  font-size: 0.72rem;
+}
+
 /* =====================
    SECTIONS
 ===================== */
@@ -426,14 +443,29 @@ body.no-scroll {
 
 .section-title {
   font-size: 2.2rem;
-  font-weight: 950;
+  font-weight: 800; /* tweak: more elegant */
   letter-spacing: -0.02em;
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .section-sub {
   color: var(--muted);
   max-width: 720px;
+  line-height: 1.75;
+}
+
+/* =====================
+   AUTO TOP SPACING (fix for pages where first section is too close)
+===================== */
+main > .section:first-child {
+  padding-top: 160px;
+}
+
+@media (max-width: 900px) {
+  main > .section:first-child {
+    padding-top: 140px;
+  }
 }
 
 /* =====================
@@ -465,7 +497,7 @@ body.no-scroll {
 }
 
 /* =====================
-   AGENDA
+   OLD AGENDA (keep)
 ===================== */
 .agenda {
   display: grid;
@@ -488,7 +520,7 @@ body.no-scroll {
 
 .agenda-time {
   color: var(--yellow);
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   letter-spacing: 0.08em;
   font-size: 0.9rem;
   padding-top: 2px;
@@ -496,7 +528,7 @@ body.no-scroll {
 
 .agenda-body h3 {
   font-size: 1rem;
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   margin-bottom: 6px;
 }
 
@@ -535,7 +567,7 @@ body.no-scroll {
 
 .card h3 {
   font-size: 1.1rem;
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   margin-bottom: 10px;
 }
 
@@ -578,7 +610,7 @@ body.no-scroll {
   right: 18px;
   padding: 6px 12px;
   font-size: 0.68rem;
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   letter-spacing: 0.16em;
   text-transform: uppercase;
   background: linear-gradient(135deg, var(--yellow), #ffcf4a);
@@ -590,6 +622,7 @@ body.no-scroll {
   font-size: 1.25rem;
   margin-top: 10px;
   margin-bottom: 6px;
+  font-weight: 850;
 }
 
 .card.price p {
@@ -600,13 +633,13 @@ body.no-scroll {
 .price-row {
   margin: 16px 0 18px;
   font-size: 1.5rem;
-  font-weight: 950;
+  font-weight: 900;
 }
 
 .card.price .price-row strong {
   display: inline-block;
   font-size: 2.4rem;
-  font-weight: 950;
+  font-weight: 900;
   letter-spacing: -0.02em;
   margin-top: 18px;
   margin-bottom: 22px;
@@ -624,7 +657,7 @@ body.no-scroll {
   margin-top: auto;
 }
 
-/* Locked state (NO EMOJIS) */
+/* Locked state */
 .card.price.locked {
   opacity: 0.45;
   filter: grayscale(0.7);
@@ -636,7 +669,7 @@ body.no-scroll {
   top: 18px;
   left: 18px;
   font-size: 0.68rem;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
@@ -670,7 +703,7 @@ body.no-scroll {
 
 .cta h2 {
   font-size: 2.2rem;
-  font-weight: 950;
+  font-weight: 900;
 }
 
 .sponsor-form {
@@ -690,7 +723,7 @@ label {
   color: var(--muted2);
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-weight: 700;
+  font-weight: 650; /* tweak */
 }
 
 input,
@@ -723,7 +756,6 @@ textarea:focus {
   gap: 18px;
 }
 
-/* IMPORTANT: no border, no bg, no shadow here */
 .partner-card {
   aspect-ratio: 1 / 1;
   display: flex;
@@ -735,14 +767,12 @@ textarea:focus {
   box-shadow: none;
 }
 
-/* image contains the border, so just fit it nicely */
 .partner-card img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
 }
-
 
 /* =====================
    FAQ ACCORDION
@@ -768,7 +798,7 @@ textarea:focus {
   text-align: left;
 
   font-size: 0.85rem;
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   letter-spacing: 0.14em;
   text-transform: uppercase;
 
@@ -904,7 +934,7 @@ textarea:focus {
   letter-spacing: 0.2em;
   margin-bottom: 22px;
   color: #ffffff;
-  font-weight: 800;
+  font-weight: 750; /* tweak */
 }
 
 .footer-links {
@@ -1001,7 +1031,7 @@ textarea:focus {
 }
 
 /* =====================
-   SPEAKERS SECTION
+   SPEAKERS SECTION (old grid)
 ===================== */
 .speakers {
   background: #0b0b0b;
@@ -1016,7 +1046,7 @@ textarea:focus {
 
 .section-eyebrow {
   font-size: 0.75rem;
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--yellow);
@@ -1024,7 +1054,7 @@ textarea:focus {
 
 .speakers-title {
   font-size: clamp(2.8rem, 5vw, 4.8rem);
-  font-weight: 950;
+  font-weight: 900; /* tweak */
   line-height: 0.95;
   margin-top: 14px;
 }
@@ -1083,7 +1113,7 @@ textarea:focus {
 
 .speaker-info h3 {
   font-size: 1rem;
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   margin-bottom: 6px;
 }
 
@@ -1176,7 +1206,6 @@ textarea:focus {
   }
 
   .hero-content {
-    margin-left: 0;
     padding: 0;
   }
 
@@ -1255,16 +1284,14 @@ textarea:focus {
 }
 
 /* =====================
-   TICKETS STRIP (like reference image)
+   TICKETS STRIP
 ===================== */
-
 .tickets-strip {
   position: relative;
   border-radius: 18px;
   border: 1px solid rgba(245, 180, 0, 0.20);
   overflow: hidden;
 
-  /* deep card background */
   background:
     radial-gradient(1200px 400px at 20% 10%, rgba(245, 180, 0, 0.08), transparent 60%),
     radial-gradient(900px 380px at 80% 90%, rgba(198, 40, 40, 0.08), transparent 55%),
@@ -1281,7 +1308,6 @@ textarea:focus {
     inset 0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
-/* subtle texture overlay */
 .tickets-strip::before {
   content: "";
   position: absolute;
@@ -1312,7 +1338,7 @@ textarea:focus {
 
 .ticket-top {
   font-size: 0.78rem;
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.55);
@@ -1326,7 +1352,7 @@ textarea:focus {
 
 .ticket-price-main {
   font-size: clamp(2.2rem, 4.0vw, 4.2rem);
-  font-weight: 950;
+  font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1;
   color: rgba(255, 255, 255, 0.92);
@@ -1358,7 +1384,6 @@ textarea:focus {
   font-weight: 900;
 }
 
-/* SOLD state (like the “rasprodato” look) */
 .ticket-tier.is-sold {
   opacity: 0.55;
   filter: grayscale(0.35);
@@ -1378,20 +1403,19 @@ textarea:focus {
   transform: rotate(-14deg);
   background: #c62828;
   color: #fff;
-  font-weight: 950;
+  font-weight: 900;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-size: 0.72rem;
   padding: 6px 12px;
   border-radius: 4px;
-  box-shadow: 0 18px 38px rgba(0,0,0,0.45);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.45);
 }
 
-/* CURRENT */
 .ticket-tier.is-current {
   border-color: rgba(245, 180, 0, 0.35);
   box-shadow:
-    0 18px 48px rgba(0,0,0,0.45),
+    0 18px 48px rgba(0, 0, 0, 0.45),
     inset 0 0 0 1px rgba(245, 180, 0, 0.14);
 }
 
@@ -1403,7 +1427,6 @@ textarea:focus {
   color: rgba(255, 255, 255, 1);
 }
 
-/* NEXT (muted like in reference) */
 .ticket-tier.is-next .ticket-price-main {
   color: rgba(255, 255, 255, 0.55);
 }
@@ -1412,7 +1435,6 @@ textarea:focus {
   color: rgba(255, 255, 255, 0.45);
 }
 
-/* actions below strip */
 .tickets-actions {
   display: flex;
   gap: 14px;
@@ -1441,11 +1463,10 @@ textarea:focus {
 }
 
 /* =====================
-   SPEAKERS PAGE HERO
+   PAGE HERO (keep)
 ===================== */
-
 .page-hero {
-  padding: 120px 24px 72px;
+  padding: 160px 24px 72px; /* tweak: match header spacing */
   border-top: 1px solid var(--line);
   background:
     radial-gradient(900px 420px at 15% 20%, rgba(245, 180, 0, 0.10), transparent 55%),
@@ -1456,7 +1477,7 @@ textarea:focus {
 .page-eyebrow {
   display: inline-block;
   font-size: 0.75rem;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--yellow);
@@ -1465,10 +1486,11 @@ textarea:focus {
 
 .page-title {
   font-size: clamp(2.6rem, 5.2vw, 4.6rem);
-  font-weight: 950;
+  font-weight: 800;         /* tweak: agenda-like */
   line-height: 0.98;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;  /* tweak: agenda-like */
   margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .page-lead {
@@ -1485,82 +1507,8 @@ textarea:focus {
 }
 
 /* =====================
-   NAV ACTIVE (no random hover default)
+   FEATURED SPEAKER CARDS
 ===================== */
-
-.nav-menu a.active {
-  color: var(--white);
-}
-
-.nav-menu a.active::after {
-  width: 100%;
-}
-
-/* =====================
-   MOBILE NAV BASIC
-===================== */
-
-.nav-toggle {
-  display: none;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(0,0,0,0.18);
-  cursor: pointer;
-}
-
-.nav-toggle span {
-  display: block;
-  height: 2px;
-  width: 18px;
-  margin: 5px auto;
-  background: rgba(255,255,255,0.75);
-}
-
-.mobile-nav {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  background: rgba(10,10,12,0.96);
-}
-
-.mobile-nav-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 14px 18px 18px;
-  display: grid;
-  gap: 10px;
-}
-
-.mobile-nav-inner a {
-  padding: 12px 10px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.03);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.75);
-}
-
-.mobile-nav-inner a.active {
-  border-color: rgba(245,180,0,0.25);
-  color: #fff;
-}
-
-.mobile-cta {
-  margin-top: 6px;
-}
-
-/* show toggle on mobile */
-@media (max-width: 900px) {
-  .nav-toggle {
-    display: inline-block;
-  }
-}
-
-/* =====================
-   FEATURED SPEAKER CARDS (like screenshot, more pro)
-===================== */
-
 .speaker-feature-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1571,15 +1519,15 @@ textarea:focus {
   position: relative;
   overflow: hidden;
   border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background:
-    radial-gradient(700px 420px at 20% 35%, var(--glowA, rgba(245,180,0,0.22)), transparent 55%),
-    radial-gradient(680px 420px at 80% 65%, var(--glowB, rgba(198,40,40,0.18)), transparent 55%),
-    linear-gradient(180deg, rgba(18,18,20,0.92), rgba(10,10,12,0.96));
+    radial-gradient(700px 420px at 20% 35%, var(--glowA, rgba(245, 180, 0, 0.22)), transparent 55%),
+    radial-gradient(680px 420px at 80% 65%, var(--glowB, rgba(198, 40, 40, 0.18)), transparent 55%),
+    linear-gradient(180deg, rgba(18, 18, 20, 0.92), rgba(10, 10, 12, 0.96));
   display: grid;
   grid-template-columns: 0.95fr 1.25fr;
   min-height: 360px;
-  box-shadow: 0 26px 70px rgba(0,0,0,0.55);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.55);
   transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
 }
 
@@ -1590,10 +1538,10 @@ textarea:focus {
   background:
     repeating-linear-gradient(
       135deg,
-      rgba(255,255,255,0.03),
-      rgba(255,255,255,0.03) 6px,
-      rgba(0,0,0,0.00) 6px,
-      rgba(0,0,0,0.00) 14px
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.03) 6px,
+      rgba(0, 0, 0, 0.00) 6px,
+      rgba(0, 0, 0, 0.00) 14px
     );
   opacity: 0.10;
   pointer-events: none;
@@ -1601,8 +1549,8 @@ textarea:focus {
 
 .speaker-feature-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(245,180,0,0.18);
-  box-shadow: 0 34px 90px rgba(0,0,0,0.62);
+  border-color: rgba(245, 180, 0, 0.18);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.62);
 }
 
 .speaker-feature-media {
@@ -1623,16 +1571,11 @@ textarea:focus {
   transform: scale(1.06);
 }
 
-/* Soft vignette on image */
 .speaker-feature-media::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0,0,0,0.12),
-    rgba(0,0,0,0.58)
-  );
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.58));
   pointer-events: none;
 }
 
@@ -1647,23 +1590,23 @@ textarea:focus {
 
 .speaker-feature-name {
   font-size: 1.05rem;
-  font-weight: 950;
+  font-weight: 800; /* tweak */
   letter-spacing: 0.14em;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 
 .speaker-feature-role {
-  color: rgba(245,180,0,0.92);
+  color: rgba(245, 180, 0, 0.92);
   font-size: 0.78rem;
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   letter-spacing: 0.14em;
   text-transform: uppercase;
   margin-bottom: 18px;
 }
 
 .speaker-feature-bio {
-  color: rgba(255,255,255,0.72);
+  color: rgba(255, 255, 255, 0.72);
   line-height: 1.75;
   font-size: 0.95rem;
   max-width: 520px;
@@ -1676,68 +1619,9 @@ textarea:focus {
   flex-wrap: wrap;
 }
 
-.btn.btn-tight {
-  padding: 13px 18px;
-  font-size: 0.72rem;
-}
-
-/* tools row */
-.speakers-tools {
-  margin-top: 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.speakers-search input {
-  width: min(520px, 100%);
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.14);
-  padding: 12px 14px;
-  color: #fff;
-  outline: none;
-}
-
-.speakers-search input:focus {
-  border-color: rgba(245,180,0,0.45);
-}
-
-.speakers-note {
-  color: rgba(255,255,255,0.55);
-  font-size: 0.9rem;
-}
-
-/* compact grid spacing */
-.speakers-grid--compact {
-  margin-top: 26px;
-}
-
-@media (max-width: 1100px) {
-  .speaker-feature-card {
-    grid-template-columns: 1fr;
-  }
-
-  .speaker-feature-media {
-    height: 320px;
-  }
-
-  .speaker-feature-content {
-    padding: 34px 26px;
-  }
-}
-
-@media (max-width: 900px) {
-  .speaker-feature-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* =====================
    LinkedIn button (person-linkedin)
 ===================== */
-
 .person-linkedin {
   display: inline-flex;
   align-items: center;
@@ -1750,7 +1634,7 @@ textarea:focus {
   background: rgba(255, 255, 255, 0.03);
 
   font-size: 0.78rem;
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   letter-spacing: 0.10em;
   text-transform: uppercase;
 
@@ -1772,14 +1656,13 @@ textarea:focus {
 }
 
 /* =====================
-   ORGANIZED BY (subtle strip)
+   ORGANIZED BY (strip)
 ===================== */
-
 .org-by {
   padding: 18px 24px 8px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  background: rgba(0,0,0,0.18);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.18);
 }
 
 .org-row {
@@ -1793,10 +1676,10 @@ textarea:focus {
 
 .org-label {
   font-size: 0.7rem;
-  font-weight: 900;
+  font-weight: 800; /* tweak */
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .org-logos {
@@ -1806,7 +1689,7 @@ textarea:focus {
 }
 
 .org-logo {
-  height: 90px;          /* was ~22px */
+  height: 90px;
   width: auto;
   max-width: 240px;
   object-fit: contain;
@@ -1818,7 +1701,7 @@ textarea:focus {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: rgba(255, 204, 62, 0.55); /* subtle accent */
+  background: rgba(255, 204, 62, 0.55);
   opacity: 0.9;
 }
 
@@ -1835,9 +1718,8 @@ textarea:focus {
 /* =====================
    AGENDA PAGE (reference-style layout)
 ===================== */
-
 .agenda-page {
-  padding: 160px 24px 96px; /* space for ticker + fixed nav */
+  padding: 160px 24px 96px;
   background: #0b0b0b;
   border-top: 1px solid var(--line);
 }
@@ -1875,6 +1757,7 @@ textarea:focus {
   letter-spacing: -0.04em;
   line-height: 0.98;
   margin-bottom: 18px;
+  text-transform: uppercase;
 }
 
 .agenda-desc {
@@ -1908,7 +1791,7 @@ textarea:focus {
   background: rgba(245, 180, 0, 0.08);
 }
 
-/* RIGHT (accordion list) */
+/* RIGHT */
 .agenda-right {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -1917,7 +1800,6 @@ textarea:focus {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* remove default marker */
 .agenda-row summary::-webkit-details-marker {
   display: none;
 }
@@ -1965,7 +1847,7 @@ textarea:focus {
 }
 
 .agenda-panel {
-  padding: 0 0 22px 162px; /* aligns text under title column */
+  padding: 0 0 22px 162px;
   color: rgba(255, 255, 255, 0.62);
   line-height: 1.75;
   max-width: 80ch;
@@ -2020,4 +1902,160 @@ textarea:focus {
   .agenda-actions .btn {
     width: 100%;
   }
+}
+
+/* =====================
+   PAGE TOP SPACING UTILITY (if you use it)
+===================== */
+.page-top {
+  padding-top: 160px !important;
+}
+
+@media (max-width: 900px) {
+  .page-top {
+    padding-top: 140px !important;
+  }
+}
+
+/* =====================
+   NEW: REUSABLE "AGENDA-STYLE" SPLIT PAGES
+   Use: <section class="page-split"> ... <div class="page-layout"> ...
+===================== */
+.page-split {
+  padding: 160px 24px 96px;
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(900px 420px at 15% 20%, rgba(245, 180, 0, 0.10), transparent 55%),
+    radial-gradient(800px 380px at 85% 80%, rgba(198, 40, 40, 0.10), transparent 55%),
+    #0b0b0b;
+}
+
+.page-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 380px) 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.page-left {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+}
+
+.page-sparkles {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.page-sparkles span {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  transform: rotate(45deg);
+  opacity: 0.9;
+}
+
+.page-desc {
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.75;
+  max-width: 34ch;
+}
+
+.page-left-actions {
+  margin-top: 26px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.page-outline-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.page-outline-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 180, 0, 0.35);
+  background: rgba(245, 180, 0, 0.08);
+}
+
+@media (max-width: 1000px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .page-left {
+    position: static;
+  }
+
+  .page-desc {
+    max-width: 70ch;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-split {
+    padding: 140px 16px 80px;
+  }
+}
+
+/* =====================
+   FEATURE CARDS RESPONSIVE
+===================== */
+@media (max-width: 1100px) {
+  .speaker-feature-card {
+    grid-template-columns: 1fr;
+  }
+
+  .speaker-feature-media {
+    height: 320px;
+  }
+
+  .speaker-feature-content {
+    padding: 34px 26px;
+  }
+}
+
+@media (max-width: 900px) {
+  .speaker-feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* subtle background image overlay */
+.agenda-page {
+  position: relative; /* needed for ::before */
+  overflow: hidden;   /* keeps overlay clipped */
+}
+
+.agenda-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/lines.svg"); /* change path */
+  background-repeat: repeat;              /* or no-repeat */
+  background-size: cover;                 /* or auto */
+  background-position: center;
+  opacity: 0.08;                          /* tweak 0.03–0.12 */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* make sure content sits above the overlay */
+.agenda-page > * {
+  position: relative;
+  z-index: 1;
 }
