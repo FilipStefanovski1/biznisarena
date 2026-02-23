@@ -25,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -137,7 +138,8 @@ a {
   z-index: 250;
   background: transparent;
   border-bottom: 1px solid transparent;
-  transition: background 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease;
+  transition: background 0.25s ease, border-color 0.25s ease,
+    backdrop-filter 0.25s ease;
 }
 
 .navbar.is-scrolled {
@@ -288,7 +290,7 @@ a {
 
 .mobile-nav-inner a {
   padding: 12px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.03);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -582,8 +584,7 @@ main > .section:first-child {
 .card.price {
   position: relative;
   padding: 36px 28px 34px;
-  background:
-    radial-gradient(
+  background: radial-gradient(
       120% 120% at 10% 0%,
       rgba(245, 180, 0, 0.08),
       transparent 60%
@@ -599,8 +600,7 @@ main > .section:first-child {
 
 .card.price:hover {
   transform: none;
-  box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.55),
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55),
     inset 0 0 0 1px rgba(245, 180, 0, 0.35);
 }
 
@@ -1108,7 +1108,11 @@ textarea:focus {
 
 .speaker-info {
   padding: 22px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95));
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.95)
+  );
 }
 
 .speaker-info h3 {
@@ -1289,12 +1293,19 @@ textarea:focus {
 .tickets-strip {
   position: relative;
   border-radius: 18px;
-  border: 1px solid rgba(245, 180, 0, 0.20);
+  border: 1px solid rgba(245, 180, 0, 0.2);
   overflow: hidden;
 
-  background:
-    radial-gradient(1200px 400px at 20% 10%, rgba(245, 180, 0, 0.08), transparent 60%),
-    radial-gradient(900px 380px at 80% 90%, rgba(198, 40, 40, 0.08), transparent 55%),
+  background: radial-gradient(
+      1200px 400px at 20% 10%,
+      rgba(245, 180, 0, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 380px at 80% 90%,
+      rgba(198, 40, 40, 0.08),
+      transparent 55%
+    ),
     linear-gradient(180deg, rgba(16, 16, 18, 0.92), rgba(10, 10, 12, 0.95));
 
   padding: 22px 22px;
@@ -1303,8 +1314,7 @@ textarea:focus {
   align-items: center;
   gap: 14px;
 
-  box-shadow:
-    0 26px 70px rgba(0, 0, 0, 0.55),
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.55),
     inset 0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
@@ -1312,14 +1322,13 @@ textarea:focus {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    repeating-linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.03),
-      rgba(255, 255, 255, 0.03) 6px,
-      rgba(0, 0, 0, 0.00) 6px,
-      rgba(0, 0, 0, 0.00) 14px
-    );
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 6px,
+    rgba(0, 0, 0, 0) 6px,
+    rgba(0, 0, 0, 0) 14px
+  );
   opacity: 0.12;
   pointer-events: none;
 }
@@ -1351,7 +1360,7 @@ textarea:focus {
 }
 
 .ticket-price-main {
-  font-size: clamp(2.2rem, 4.0vw, 4.2rem);
+  font-size: clamp(2.2rem, 4vw, 4.2rem);
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -1414,8 +1423,7 @@ textarea:focus {
 
 .ticket-tier.is-current {
   border-color: rgba(245, 180, 0, 0.35);
-  box-shadow:
-    0 18px 48px rgba(0, 0, 0, 0.45),
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45),
     inset 0 0 0 1px rgba(245, 180, 0, 0.14);
 }
 
@@ -1468,9 +1476,16 @@ textarea:focus {
 .page-hero {
   padding: 160px 24px 72px; /* tweak: match header spacing */
   border-top: 1px solid var(--line);
-  background:
-    radial-gradient(900px 420px at 15% 20%, rgba(245, 180, 0, 0.10), transparent 55%),
-    radial-gradient(800px 380px at 85% 80%, rgba(198, 40, 40, 0.10), transparent 55%),
+  background: radial-gradient(
+      900px 420px at 15% 20%,
+      rgba(245, 180, 0, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      800px 380px at 85% 80%,
+      rgba(198, 40, 40, 0.1),
+      transparent 55%
+    ),
     #0b0b0b;
 }
 
@@ -1486,9 +1501,9 @@ textarea:focus {
 
 .page-title {
   font-size: clamp(2.6rem, 5.2vw, 4.6rem);
-  font-weight: 800;         /* tweak: agenda-like */
+  font-weight: 800; /* tweak: agenda-like */
   line-height: 0.98;
-  letter-spacing: -0.04em;  /* tweak: agenda-like */
+  letter-spacing: -0.04em; /* tweak: agenda-like */
   margin-bottom: 16px;
   text-transform: uppercase;
 }
@@ -1520,30 +1535,37 @@ textarea:focus {
   overflow: hidden;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background:
-    radial-gradient(700px 420px at 20% 35%, var(--glowA, rgba(245, 180, 0, 0.22)), transparent 55%),
-    radial-gradient(680px 420px at 80% 65%, var(--glowB, rgba(198, 40, 40, 0.18)), transparent 55%),
+  background: radial-gradient(
+      700px 420px at 20% 35%,
+      var(--glowA, rgba(245, 180, 0, 0.22)),
+      transparent 55%
+    ),
+    radial-gradient(
+      680px 420px at 80% 65%,
+      var(--glowB, rgba(198, 40, 40, 0.18)),
+      transparent 55%
+    ),
     linear-gradient(180deg, rgba(18, 18, 20, 0.92), rgba(10, 10, 12, 0.96));
   display: grid;
   grid-template-columns: 0.95fr 1.25fr;
   min-height: 360px;
   box-shadow: 0 26px 70px rgba(0, 0, 0, 0.55);
-  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  transition: transform 0.28s ease, box-shadow 0.28s ease,
+    border-color 0.28s ease;
 }
 
 .speaker-feature-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    repeating-linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.03),
-      rgba(255, 255, 255, 0.03) 6px,
-      rgba(0, 0, 0, 0.00) 6px,
-      rgba(0, 0, 0, 0.00) 14px
-    );
-  opacity: 0.10;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 6px,
+    rgba(0, 0, 0, 0) 6px,
+    rgba(0, 0, 0, 0) 14px
+  );
+  opacity: 0.1;
   pointer-events: none;
 }
 
@@ -1635,17 +1657,18 @@ textarea:focus {
 
   font-size: 0.78rem;
   font-weight: 800; /* tweak */
-  letter-spacing: 0.10em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 
   color: #0a66c2;
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  transition: transform 0.18s ease, border-color 0.18s ease,
+    background 0.18s ease;
 }
 
 .person-linkedin:hover {
   transform: translateY(-2px);
   border-color: rgba(10, 102, 194, 0.55);
-  background: rgba(10, 102, 194, 0.10);
+  background: rgba(10, 102, 194, 0.1);
 }
 
 .person-linkedin svg {
@@ -1782,7 +1805,8 @@ textarea:focus {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.82);
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  transition: transform 0.18s ease, border-color 0.18s ease,
+    background 0.18s ease;
 }
 
 .agenda-outline-btn:hover {
@@ -1883,9 +1907,7 @@ textarea:focus {
 
   .agenda-summary {
     grid-template-columns: 1fr 28px;
-    grid-template-areas:
-      "time chev"
-      "title chev";
+    grid-template-areas: "time chev" "title chev";
     row-gap: 10px;
     padding: 18px 0;
     align-items: start;
@@ -1919,14 +1941,20 @@ textarea:focus {
 
 /* =====================
    NEW: REUSABLE "AGENDA-STYLE" SPLIT PAGES
-   Use: <section class="page-split"> ... <div class="page-layout"> ...
 ===================== */
 .page-split {
   padding: 160px 24px 96px;
   border-top: 1px solid var(--line);
-  background:
-    radial-gradient(900px 420px at 15% 20%, rgba(245, 180, 0, 0.10), transparent 55%),
-    radial-gradient(800px 380px at 85% 80%, rgba(198, 40, 40, 0.10), transparent 55%),
+  background: radial-gradient(
+      900px 420px at 15% 20%,
+      rgba(245, 180, 0, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      800px 380px at 85% 80%,
+      rgba(198, 40, 40, 0.1),
+      transparent 55%
+    ),
     #0b0b0b;
 }
 
@@ -1982,7 +2010,8 @@ textarea:focus {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.82);
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  transition: transform 0.18s ease, border-color 0.18s ease,
+    background 0.18s ease;
 }
 
 .page-outline-btn:hover {
@@ -2037,24 +2066,23 @@ textarea:focus {
 
 /* subtle background image overlay */
 .agenda-page {
-  position: relative; /* needed for ::before */
-  overflow: hidden;   /* keeps overlay clipped */
+  position: relative;
+  overflow: hidden;
 }
 
 .agenda-page::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/lines.svg"); /* change path */
-  background-repeat: repeat;              /* or no-repeat */
-  background-size: cover;                 /* or auto */
+  background-image: url("/lines.svg");
+  background-repeat: repeat;
+  background-size: cover;
   background-position: center;
-  opacity: 0.08;                          /* tweak 0.03–0.12 */
+  opacity: 0.08;
   pointer-events: none;
   z-index: 0;
 }
 
-/* make sure content sits above the overlay */
 .agenda-page > * {
   position: relative;
   z-index: 1;
@@ -2063,15 +2091,19 @@ textarea:focus {
 /* =====================
    SPLIT SECTIONS (agenda-style, dark theme)
 ===================== */
-
 .split-section {
   padding: 96px 24px;
   border-top: 1px solid var(--line);
-
-  /* same vibe as your other dark sections */
-  background:
-    radial-gradient(900px 420px at 15% 20%, rgba(245, 180, 0, 0.10), transparent 55%),
-    radial-gradient(800px 380px at 85% 80%, rgba(198, 40, 40, 0.10), transparent 55%),
+  background: radial-gradient(
+      900px 420px at 15% 20%,
+      rgba(245, 180, 0, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      800px 380px at 85% 80%,
+      rgba(198, 40, 40, 0.1),
+      transparent 55%
+    ),
     #0b0b0b;
 }
 
@@ -2135,7 +2167,8 @@ textarea:focus {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--line);
   padding: 24px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .split-card:hover {
@@ -2178,4 +2211,137 @@ textarea:focus {
   .split-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* =====================
+   ENTRY FORM (Sweden Market) — scoped to competition accordion
+===================== */
+
+/* Make the form row use full width on desktop (avoid big left indent) */
+.entry-form-row .agenda-panel {
+  padding-left: 0;
+  max-width: none;
+}
+
+/* Hide honeypot */
+.entry-form .hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Fieldsets */
+.entry-form .entry-fieldset {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 18px;
+  margin: 14px 0;
+}
+
+.entry-form .entry-legend {
+  padding: 0 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Grid for fields */
+.entry-form .field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .entry-form .field-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Select styling (match your inputs) */
+.entry-form select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 12px;
+  color: var(--white);
+  font-family: inherit;
+  outline: none;
+}
+
+.entry-form select:focus {
+  border-color: rgba(245, 180, 0, 0.55);
+}
+
+/* Word counter */
+.entry-form .word-count {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+}
+
+/* Radio / checkbox groups */
+.entry-form .option-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  margin-top: 8px;
+}
+
+/* “pill” look for choices */
+.entry-form .option-pill,
+.entry-form .check-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.18);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+.entry-form .option-pill input,
+.entry-form .check-pill input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+/* Checks grid for Section 7 */
+.entry-form .checks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .entry-form .checks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================
+   FIX: Native <select> dropdown options invisible on Windows/Chrome
+   (dropdown list is white, your text was light)
+===================== */
+.entry-form select option,
+.entry-form select optgroup,
+.sponsor-form select option,
+.sponsor-form select optgroup {
+  color: #111 !important;
+  background: #fff !important;
+}
+
+.entry-form select option[disabled],
+.sponsor-form select option[disabled] {
+  color: #777 !important;
 }

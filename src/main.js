@@ -269,3 +269,115 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("Формата е испратена. Ќе ве контактираме наскоро.");
   });
 });
+
+// -----------------------
+// Sweden Market Entry form (UX + validation)
+// -----------------------
+const swedenForm = document.querySelector("#swedenEntryForm");
+
+if (swedenForm) {
+  const prefersReducedMotionLocal = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  const countWords = (text) =>
+    text
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean).length;
+
+  // Word limits for any textarea with data-max-words
+  const limitedTextareas = Array.from(
+    swedenForm.querySelectorAll("textarea[data-max-words]")
+  );
+
+  limitedTextareas.forEach((ta) => {
+    const max = Number(ta.dataset.maxWords || "0");
+    const counter = swedenForm.querySelector(`[data-wordcount="${ta.id}"]`);
+
+    const update = () => {
+      const words = countWords(ta.value);
+
+      if (counter) counter.textContent = `${Math.min(words, max)} / ${max} зборови`;
+
+      // Hard cap: trim extra words (keeps it simple and “school safe”)
+      if (max > 0 && words > max) {
+        const trimmed = ta.value
+          .trim()
+          .split(/\s+/)
+          .slice(0, max)
+          .join(" ");
+        ta.value = trimmed + (prefersReducedMotionLocal ? "" : " ");
+      }
+    };
+
+    ta.addEventListener("input", update);
+    update();
+  });
+
+  // Conditional: countries field only if intl_clients = yes
+  const countriesWrap = swedenForm.querySelector("[data-countries-wrap]");
+  const countriesInput = swedenForm.querySelector("#countries");
+  const intlRadios = Array.from(swedenForm.querySelectorAll('input[name="intl_clients"]'));
+
+  const updateCountries = () => {
+    const selected = swedenForm.querySelector('input[name="intl_clients"]:checked')?.value;
+    const show = selected === "yes";
+
+    if (countriesWrap) countriesWrap.style.display = show ? "" : "none";
+    if (countriesInput) {
+      countriesInput.required = show;
+      if (!show) countriesInput.value = "";
+    }
+  };
+
+  intlRadios.forEach((r) => r.addEventListener("change", updateCountries));
+  updateCountries();
+
+  // Support checkboxes: require at least one
+  const supportChecks = Array.from(swedenForm.querySelectorAll('input[name="support[]"]'));
+  const supportAnchor = supportChecks[0] || null;
+
+  const validateSupport = () => {
+    if (!supportAnchor) return true;
+    const any = supportChecks.some((c) => c.checked);
+    supportAnchor.setCustomValidity(any ? "" : "Избери барем една опција.");
+    return any;
+  };
+
+  supportChecks.forEach((c) => c.addEventListener("change", validateSupport));
+  validateSupport();
+
+  // Submit behavior:
+  // - If action is "#" (or empty), we treat as frontend-only and show success alert.
+  // - If you later add a real action URL, it will submit normally (after validation).
+  swedenForm.addEventListener("submit", (e) => {
+    // Honeypot: silently block obvious spam
+    const hp = swedenForm.querySelector('input[name="website"]');
+    if (hp && hp.value.trim() !== "") {
+      e.preventDefault();
+      return;
+    }
+
+    validateSupport();
+
+    if (!swedenForm.checkValidity()) {
+      e.preventDefault();
+      swedenForm.reportValidity();
+      return;
+    }
+
+    const action = (swedenForm.getAttribute("action") || "").trim();
+    if (!action || action === "#") {
+      e.preventDefault();
+      swedenForm.reset();
+      updateCountries();
+      validateSupport();
+
+      // reset counters
+      limitedTextareas.forEach((ta) => ta.dispatchEvent(new Event("input")));
+
+      alert("Формата е испратена. Ќе ве контактираме наскоро.");
+    }
+  });
+}

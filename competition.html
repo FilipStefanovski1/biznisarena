@@ -112,6 +112,26 @@
               јасно позиционирање и реална изводливост. Форматот ќе се прецизира како што
               се финализираат сегментите.
             </p>
+
+            <p class="page-desc" style="margin-top: 14px;">
+              <strong>Entry to the Swedish Market</strong> — повик за компании кои сакаат да се пласираат на Шведскиот пазар.
+              Аплицирајте преку формата десно.
+            </p>
+
+            <!-- SINGLE, CLEAR CTA ZONE -->
+            <div class="page-left-actions">
+              <a
+                class="btn primary btn-tight"
+                href="#sweden-entry"
+                data-open-details="sweden-entry"
+              >
+                Отвори апликација
+              </a>
+
+              <a class="btn ghost btn-tight" href="/contact.html">
+                Контакт за прашања
+              </a>
+            </div>
           </aside>
 
           <!-- RIGHT -->
@@ -175,12 +195,288 @@
                 <p style="margin-bottom: 10px;"><strong>1) Апликација</strong> — Кратка пријава со основни информации и целен пазар.</p>
                 <p style="margin-bottom: 10px;"><strong>2) Селекција</strong> — Избор на финалисти според критериуми.</p>
                 <p><strong>3) Pitch</strong> — Презентација на настанот + резултати.</p>
+
+                <p style="margin-top: 14px;">
+                  <a href="#sweden-entry" data-open-details="sweden-entry" style="color: rgba(245, 180, 0, 0.92); text-decoration: underline;">
+                    Оди на апликацијата (Sweden Market)
+                  </a>
+                </p>
               </div>
             </details>
 
-            <div class="agenda-actions">
-              <a class="btn primary" href="/contact.html">Аплицирај / Контакт</a>
-            </div>
+            <!-- ===============================
+                 ENTRY TO THE SWEDISH MARKET FORM
+                 =============================== -->
+            <!-- NOTE: collapsed by default (no open) + opens via JS when user clicks CTA -->
+            <details
+              class="agenda-row entry-form-row"
+              id="sweden-entry"
+              style="scroll-margin-top: 140px;"
+            >
+              <summary class="agenda-summary">
+                <span class="agenda-time">CALL</span>
+                <span class="agenda-name">Entry to the Swedish Market — Апликација</span>
+                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+              </summary>
+
+              <!-- IMPORTANT: remove the "big left indent" only here -->
+              <div class="agenda-panel" style="padding-left: 0; max-width: none;">
+                <p style="margin-bottom: 10px;">
+                  Здружението на млади претприемачи <strong>Phoenix Rising</strong>, во соработка со
+                  <strong>Шведско-Македонската Стопанска Комора</strong>, објавува повик за компании кои сакаат да се
+                  пласираат на Шведскиот пазар.
+                </p>
+
+                <p style="margin-bottom: 10px;"><strong>Отворено за:</strong></p>
+                <ul style="margin-top: 0; margin-bottom: 14px;">
+                  <li>Производи</li>
+                  <li>Услуги</li>
+                  <li>Дигитални решенија</li>
+                </ul>
+
+                <p style="margin-bottom: 18px;">
+                  Доколку ги исполнувате условите и бидете избрани, вашата компанија ќе добие
+                  <strong>финансиска</strong> и <strong>нефинансиска</strong> поддршка за влез во Шведскиот пазар.
+                </p>
+
+                <!-- IMPORTANT:
+                  - Replace action="#" with your real endpoint later (Formspree / backend)
+                  - While action="#" it works as "front-end only" (main.js shows success alert).
+                -->
+                <form id="swedenEntryForm" class="sponsor-form entry-form" action="#" method="post" novalidate>
+                  <!-- Honeypot -->
+                  <div class="hp-field" aria-hidden="true">
+                    <label>Не пополнувај</label>
+                    <input type="text" name="website" tabindex="-1" autocomplete="off" />
+                  </div>
+
+                  <fieldset class="entry-fieldset">
+                    <legend class="entry-legend">SECTION 1 – ОСНОВНИ ПОДАТОЦИ</legend>
+
+                    <div class="field-grid">
+                      <div class="field">
+                        <label for="companyName">1. Име на компанија *</label>
+                        <input id="companyName" name="company_name" type="text" autocomplete="organization" required />
+                      </div>
+
+                      <div class="field">
+                        <label for="foundedYear">2. Година на основање *</label>
+                        <input id="foundedYear" name="founded_year" type="number" inputmode="numeric" min="1900" max="2100" required />
+                      </div>
+
+                      <div class="field">
+                        <label for="applicantNameRole">3. Име и функција на апликантот *</label>
+                        <input id="applicantNameRole" name="applicant_name_role" type="text" autocomplete="name" required />
+                      </div>
+
+                      <div class="field">
+                        <label for="phone">4. Контакт телефон *</label>
+                        <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
+                      </div>
+
+                      <div class="field">
+                        <label for="email">5. E-mail *</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required />
+                      </div>
+
+                      <div class="field">
+                        <label for="links">6. Веб-страница / Instagram / LinkedIn</label>
+                        <input id="links" name="links" type="text" placeholder="https://... / @username / linkedin.com/..." />
+                      </div>
+
+                      <div class="field">
+                        <label for="businessType">7. Тип на бизнис *</label>
+                        <select id="businessType" name="business_type" required>
+                          <option value="" selected disabled>Одбери…</option>
+                          <option value="product">Производ</option>
+                          <option value="service">Услуга</option>
+                          <option value="mobile_app">Мобилна апликација</option>
+                          <option value="digital_solution">Дигитални решенија</option>
+                          <option value="other">Друго</option>
+                        </select>
+                      </div>
+
+                      <div class="field">
+                        <label for="employees">8. Број на вработени *</label>
+                        <select id="employees" name="employees" required>
+                          <option value="" selected disabled>Одбери…</option>
+                          <option value="0-5">0–5</option>
+                          <option value="6-20">6–20</option>
+                          <option value="21-50">21–50</option>
+                          <option value="51+">51+</option>
+                        </select>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="entry-fieldset">
+                    <legend class="entry-legend">SECTION 2 – ШТО НУДИТЕ</legend>
+
+                    <div class="field">
+                      <label for="offerDesc">9. Опишете го вашиот производ / услуга (макс 200 зборови) *</label>
+                      <textarea id="offerDesc" name="offer_description" rows="5" required data-max-words="200"></textarea>
+                      <div class="word-count" data-wordcount="offerDesc">0 / 200 зборови</div>
+                    </div>
+
+                    <div class="field-grid">
+                      <div class="field">
+                        <label for="problem">10. Кој проблем го решавате? *</label>
+                        <input id="problem" name="problem" type="text" required />
+                      </div>
+
+                      <div class="field">
+                        <label for="targetGroup">11. Која е вашата таргет група? *</label>
+                        <input id="targetGroup" name="target_group" type="text" required />
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="entry-fieldset">
+                    <legend class="entry-legend">SECTION 3 – ТЕКОВЕН СТАТУС</legend>
+
+                    <div class="field-grid">
+                      <div class="field">
+                        <label for="revenue">12. Годишен приход (просек) *</label>
+                        <select id="revenue" name="annual_revenue" required>
+                          <option value="" selected disabled>Одбери…</option>
+                          <option value="pre_revenue">Pre-revenue</option>
+                          <option value="0-50k">0–50k €</option>
+                          <option value="50k-200k">50k–200k €</option>
+                          <option value="200k-1m">200k–1M €</option>
+                          <option value="1m+">1M+ €</option>
+                        </select>
+                      </div>
+
+                      <div class="field">
+                        <label>13. Дали веќе работите со клиенти надвор од Македонија? *</label>
+                        <div class="option-group">
+                          <label class="option-pill"><input type="radio" name="intl_clients" value="yes" required /> Да</label>
+                          <label class="option-pill"><input type="radio" name="intl_clients" value="no" /> Не</label>
+                        </div>
+                      </div>
+
+                      <div class="field" data-countries-wrap>
+                        <label for="countries">14. Ако да – во кои земји? *</label>
+                        <input id="countries" name="countries" type="text" placeholder="Пример: Германија, Холандија…" />
+                      </div>
+
+                      <div class="field">
+                        <label for="certs">15. Дали имате ЕУ сертификати / ISO стандарди?</label>
+                        <select id="certs" name="certifications">
+                          <option value="" selected disabled>Одбери…</option>
+                          <option value="eu">ЕУ сертификати</option>
+                          <option value="iso">ISO стандарди</option>
+                          <option value="both">И двете</option>
+                          <option value="na">Не се применливо</option>
+                          <option value="none">Немаме</option>
+                        </select>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="entry-fieldset">
+                    <legend class="entry-legend">SECTION 4 – ПОДГОТВЕНОСТ ЗА ШВЕДСКИ ПАЗАР</legend>
+
+                    <div class="field">
+                      <label for="whySweden">16. Зошто мислите дека вашиот бизнис има потенцијал во Шведска? *</label>
+                      <textarea id="whySweden" name="why_sweden" rows="4" required></textarea>
+                    </div>
+
+                    <div class="field-grid">
+                      <div class="field">
+                        <label>17. Дали имате англиска верзија на веб страна / маркетинг материјали? *</label>
+                        <div class="option-group">
+                          <label class="option-pill"><input type="radio" name="english_materials" value="yes" required /> Да</label>
+                          <label class="option-pill"><input type="radio" name="english_materials" value="no" /> Не</label>
+                          <label class="option-pill"><input type="radio" name="english_materials" value="in_progress" /> Во подготовка</label>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label>18. Дали имате капацитет за скалирање? *</label>
+                        <div class="option-group">
+                          <label class="option-pill"><input type="radio" name="scaling_capacity" value="yes" required /> Да</label>
+                          <label class="option-pill"><input type="radio" name="scaling_capacity" value="no" /> Не</label>
+                          <label class="option-pill"><input type="radio" name="scaling_capacity" value="partly" /> Делумно</label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="entry-fieldset">
+                    <legend class="entry-legend">SECTION 5 – ИЗВОЗ И УСОГЛАСЕНОСТ</legend>
+
+                    <div class="field">
+                      <label>19. (Физички производ) Дали сте подготвени да ја усогласите документацијата со ЕУ регулатива?</label>
+                      <div class="option-group">
+                        <label class="option-pill"><input type="radio" name="eu_docs_ready" value="yes" /> Да</label>
+                        <label class="option-pill"><input type="radio" name="eu_docs_ready" value="no" /> Не</label>
+                        <label class="option-pill"><input type="radio" name="eu_docs_ready" value="already" /> Веќе усогласено</label>
+                        <label class="option-pill"><input type="radio" name="eu_docs_ready" value="na" /> Не се применливо</label>
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label>20. Дали сте подготвени за правна и административна подготовка за ЕУ пазар? *</label>
+                      <div class="option-group">
+                        <label class="option-pill"><input type="radio" name="legal_admin_ready" value="yes" required /> Да</label>
+                        <label class="option-pill"><input type="radio" name="legal_admin_ready" value="no" /> Не</label>
+                        <label class="option-pill"><input type="radio" name="legal_admin_ready" value="partly" /> Делумно</label>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="entry-fieldset">
+                    <legend class="entry-legend">SECTION 6 – PITCH</legend>
+
+                    <div class="field">
+                      <label for="whyYou">21. Зошто токму вашата компанија треба да биде избрана? (макс 250 зборови) *</label>
+                      <textarea id="whyYou" name="pitch_why_us" rows="6" required data-max-words="250"></textarea>
+                      <div class="word-count" data-wordcount="whyYou">0 / 250 зборови</div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="entry-fieldset">
+                    <legend class="entry-legend">SECTION 7 – ПОДДРШКА</legend>
+
+                    <div class="field">
+                      <label>22. Дали сте заинтересирани за: *</label>
+                      <div class="checks-grid" data-support-wrap>
+                        <label class="check-pill"><input type="checkbox" name="support[]" value="financial" /> Финансиска поддршка</label>
+                        <label class="check-pill"><input type="checkbox" name="support[]" value="mentorship" /> Менторска поддршка</label>
+                        <label class="check-pill"><input type="checkbox" name="support[]" value="investors" /> Поврзување со инвеститори</label>
+                        <label class="check-pill"><input type="checkbox" name="support[]" value="meetings_sweden" /> Деловни состаноци во Шведска</label>
+                        <label class="check-pill"><input type="checkbox" name="support[]" value="all" /> Сите наведени</label>
+                      </div>
+                      <p class="form-note" style="margin-top: 10px;">Избери барем една опција.</p>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="entry-fieldset">
+                    <legend class="entry-legend">SECTION 8 – СОГЛАСНОСТ</legend>
+
+                    <div class="field">
+                      <label class="check-pill">
+                        <input type="checkbox" name="data_correct" required />
+                        23. Потврдувам дека податоците се точни *
+                      </label>
+                    </div>
+
+                    <div class="field">
+                      <label class="check-pill">
+                        <input type="checkbox" name="data_processing" required />
+                        24. Се согласувам со обработка на податоци *
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <button type="submit" class="btn primary">Испрати пријава</button>
+                  <p class="form-note">
+                    По испраќање, ќе добиете потврда по е-пошта (ако имате поврзан реален endpoint).
+                  </p>
+                </form>
+              </div>
+            </details>
           </div>
         </div>
       </section>
@@ -233,11 +529,11 @@
           <div class="footer-col">
             <h4 class="footer-heading">НАВИГАЦИЈА</h4>
             <ul class="footer-links">
-              <li><a href="#about">ПОЧЕТНА</a></li>
-              <li><a href="#agenda">ПРОГРАМА</a></li>
-              <li><a href="#tickets">БИЛЕТИ</a></li>
-              <li><a href="#partners">ПАРТНЕРИ</a></li>
-              <li><a href="#contact">КОНТАКТ</a></li>
+              <li><a href="/">ПОЧЕТНА</a></li>
+              <li><a href="/agenda.html">ПРОГРАМА</a></li>
+              <li><a href="/tickets.html">БИЛЕТИ</a></li>
+              <li><a href="/partners.html">ПАРТНЕРИ</a></li>
+              <li><a href="/contact.html">КОНТАКТ</a></li>
             </ul>
           </div>
 
