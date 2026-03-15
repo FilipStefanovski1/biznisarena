@@ -2745,7 +2745,10 @@ body::after {
 }
 
 /* ---------- SPLIT SECTION ---------- */
-.split-section {
+/* Rich page split (about, expo, competition, agenda, contact) —
+   scoped so it doesn't override the index split-section layout */
+.split-section:has(> .split-img),
+.split-section:has(> .split-text) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 500px;
@@ -3137,7 +3140,8 @@ body::after {
     min-height: 320px;
   }
 
-  .split-section {
+  .split-section:has(> .split-img),
+  .split-section:has(> .split-text) {
     grid-template-columns: 1fr;
   }
 
