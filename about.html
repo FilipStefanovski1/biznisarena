@@ -93,126 +93,164 @@
     </header>
 
     <main id="main">
-      <!-- AGENDA-STYLE LAYOUT -->
-      <section class="agenda-page">
-        <div class="container agenda-layout">
-          <!-- LEFT (sticky like agenda) -->
-          <aside class="agenda-left">
-            <div class="agenda-sparkles" aria-hidden="true">
-              <span></span><span></span><span></span><span></span>
-            </div>
 
-            <h1 class="agenda-title">За настанот</h1>
+      <!-- ========== PAGE HERO ========== -->
+      <section class="page-hero reveal">
+        <div class="page-hero-bg" aria-hidden="true">
+          <img src="/hero-globe.png" alt="" />
+        </div>
+        <div class="page-hero-content">
+          <h1 data-mk="За настанот" data-en="About the event">За настанот</h1>
+          <p class="page-hero-sub" data-mk="Првата конференција посветена на македонски брендови, нивниот раст, позиционирање и извоз на меѓународни пазари." data-en="The first conference dedicated to Macedonian brands, their growth, positioning and export to international markets.">
+            Првата конференција посветена на македонски брендови, нивниот раст, позиционирање и извоз на меѓународни пазари.
+          </p>
+        </div>
+      </section>
 
-            <p class="agenda-desc">
-              Бизнис Арена е практична, фокусирана конференција за раст на брендови и
-              интернационален настап. Без филер. Со реални тактики, контакти и можности.
+      <!-- ========== HOW IT STARTED — split image + text ========== -->
+      <section class="split-section reveal">
+        <div class="split-img">
+          <div class="split-img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+        </div>
+        <div class="split-text">
+          <span class="split-label" data-mk="Приказна" data-en="Our story">Приказна</span>
+          <h2 class="split-heading" data-mk="Како започна" data-en="How it started">Како започна</h2>
+          <p data-mk="Бизнис Арена е конференција дизајнирана за компании што сакаат да растат паметно: подобро позиционирање, подобри канали, појасна продажба и подготовка за странски пазари." data-en="Biznis Arena is a conference designed for companies that want to grow smart: better positioning, better channels, clearer sales and preparation for foreign markets.">
+            Бизнис Арена е конференција дизајнирана за компании што сакаат да растат
+            паметно: подобро позиционирање, подобри канали, појасна продажба и
+            подготовка за странски пазари.
+          </p>
+          <p data-mk="Идејата е едноставна: практични стратегии што можеш да ги примениш веднаш, и луѓе со кои вреди да се поврзеш. Без филер. Со реални тактики, контакти и можности." data-en="The idea is simple: practical strategies you can apply immediately, and people worth connecting with. No filler. Real tactics, contacts and opportunities.">
+            Идејата е едноставна: практични стратегии што можеш да ги примениш веднаш,
+            и луѓе со кои вреди да се поврзеш. Без филер. Со реални тактики, контакти
+            и можности.
+          </p>
+        </div>
+      </section>
+
+      <!-- ========== STATS ========== -->
+      <div class="stats-row reveal">
+        <div class="stat-item">
+          <div class="stat-number" data-mk="20+" data-en="20+">20+</div>
+          <div class="stat-label" data-mk="Говорници" data-en="Speakers">Говорници</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-mk="35+" data-en="35+">35+</div>
+          <div class="stat-label" data-mk="Компании" data-en="Companies">Компании</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-mk="1000+" data-en="1000+">1000+</div>
+          <div class="stat-label" data-mk="Посетители" data-en="Visitors">Посетители</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-mk="1" data-en="1">1</div>
+          <div class="stat-label" data-mk="Ден · Скопје" data-en="Day · Skopje">Ден · Скопје</div>
+        </div>
+      </div>
+
+      <!-- ========== WE BELIEVE IN — values grid ========== -->
+      <section class="values-section reveal">
+        <div class="section-head">
+          <h2 data-mk="Во што веруваме" data-en="What we believe in">Во што веруваме</h2>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-number">01</div>
+            <h3 data-mk="Стратегија" data-en="Strategy">Стратегија</h3>
+            <p data-mk="Јасно позиционирање, диференцијација и продажна логика — без магла, без buzzwords." data-en="Clear positioning, differentiation and sales logic — no fog, no buzzwords.">
+              Јасно позиционирање, диференцијација и продажна логика — без магла, без buzzwords.
             </p>
-          
-          </aside>
+          </div>
+          <div class="value-card">
+            <div class="value-number">02</div>
+            <h3 data-mk="Квалитет" data-en="Quality">Квалитет</h3>
+            <p data-mk="Куратирани говорници и сегменти. Секоја сесија е дизајнирана да донесе реална вредност." data-en="Curated speakers and segments. Every session is designed to deliver real value.">
+              Куратирани говорници и сегменти. Секоја сесија е дизајнирана да донесе
+              реална вредност.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-number">03</div>
+            <h3 data-mk="Можности" data-en="Opportunities">Можности</h3>
+            <p data-mk="Вмрежување, партнерства и директни контакти. Луѓе и компании што вреди да ги познаваш." data-en="Networking, partnerships and direct contacts. People and companies worth knowing.">
+              Вмрежување, партнерства и директни контакти. Луѓе и компании што
+              вреди да ги познаваш.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-number">04</div>
+            <h3 data-mk="Извоз" data-en="Export">Извоз</h3>
+            <p data-mk="Go-to-market за странски пазари. Практичен фокус на скалирање надвор од Македонија." data-en="Go-to-market for foreign markets. Practical focus on scaling beyond Macedonia.">
+              Go-to-market за странски пазари. Практичен фокус на скалирање надвор
+              од Македонија.
+            </p>
+          </div>
+        </div>
+      </section>
 
-          <!-- RIGHT -->
-          <div class="agenda-right" aria-label="Информации за настанот">
-            <!-- Concept (accordion-like rows, same vibe as agenda) -->
-            <details class="agenda-row" id="concept" open>
-              <summary class="agenda-summary">
-                <span class="agenda-time">КОНЦЕПТ</span>
-                <span class="agenda-name">Што е Бизнис Арена</span>
-                <span class="agenda-chevron" aria-hidden="true">⌄</span>
-              </summary>
-              <div class="agenda-panel">
-                <p>
-                  Бизнис Арена е конференција дизајнирана за компании што сакаат да растат
-                  паметно: подобро позиционирање, подобри канали, појасна продажба и
-                  подготовка за странски пазари.
-                </p>
-                <p style="margin-top: 12px;">
-                  Идејата е едноставна: практични стратегии што можеш да ги примениш веднаш,
-                  и луѓе со кои вреди да се поврзеш.
-                </p>
-              </div>
-            </details>
+      <!-- ========== WHY — reversed split ========== -->
+      <section class="split-section reverse reveal">
+        <div class="split-img">
+          <div class="split-img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="split-text accent-bg">
+          <span class="split-label" data-mk="Мисија" data-en="Mission">Мисија</span>
+          <h2 class="split-heading" data-mk="Зошто постои" data-en="Why it exists">Зошто постои</h2>
+          <p data-mk="За да се намали хаосот од 'совети без реален контекст' и да се донесе јасна рамка за раст: бренд, маркетинг, продажба, операции и извоз." data-en="To cut through the noise of 'advice without real context' and deliver a clear framework for growth: brand, marketing, sales, operations and export.">
+            За да се намали хаосот од „совети без реален контекст" и да се донесе
+            јасна рамка за раст: бренд, маркетинг, продажба, операции и извоз.
+          </p>
+          <p data-mk="Куратирани говорници и сегменти, со фокус на резултати и конкретни примери од регионот и пошироко." data-en="Curated speakers and segments, focused on results and concrete examples from the region and beyond.">
+            Куратирани говорници и сегменти, со фокус на резултати и конкретни примери
+            од регионот и пошироко.
+          </p>
+        </div>
+      </section>
 
-            <details class="agenda-row">
-              <summary class="agenda-summary">
-                <span class="agenda-time">ЗОШТО</span>
-                <span class="agenda-name">Зошто постои</span>
-                <span class="agenda-chevron" aria-hidden="true">⌄</span>
-              </summary>
-              <div class="agenda-panel">
-                <p>
-                  За да се намали хаосот од “совети без реален контекст” и да се донесе
-                  јасна рамка за раст: бренд, маркетинг, продажба, операции и извоз.
-                </p>
-                <p style="margin-top: 12px;">
-                  Куратирани говорници и сегменти, со фокус на резултати и конкретни примери.
-                </p>
-              </div>
-            </details>
+      <!-- ========== WHO IT'S FOR ========== -->
+      <section class="audience-section reveal">
+        <div class="section-head" style="text-align:center; margin-bottom:48px;">
+          <h2 class="section-title" data-mk="За кого е" data-en="Who it's for" style="font-size:clamp(2.4rem,5vw,4rem); font-weight:900; text-transform:uppercase;">За кого е</h2>
+          <p class="section-sub" data-mk="Компании и тимови во различни фази на развој." data-en="Companies and teams at various stages of development." style="margin-top:12px; color:var(--muted);">Компании и тимови во различни фази на развој.</p>
+        </div>
 
-            <details class="agenda-row">
-              <summary class="agenda-summary">
-                <span class="agenda-time">ШТО ДОБИВАШ</span>
-                <span class="agenda-name">Вредност за посетител</span>
-                <span class="agenda-chevron" aria-hidden="true">⌄</span>
-              </summary>
-              <div class="agenda-panel">
-                <p>Практични takeaways, контакти и можности за партнерства.</p>
-                <p style="margin-top: 12px;">
-                  Експо зона за директен контакт со компании и тимови + простор за вмрежување
-                  без “гужва без поента”.
-                </p>
-              </div>
-            </details>
+        <div class="audience-grid">
+          <div class="audience-card">
+            <h3 data-mk="Компании во развој" data-en="Growing companies">Компании во развој</h3>
+            <p data-mk="Градење на основа: бренд, продукт, први канали и доверба кај клиентите." data-en="Building the foundation: brand, product, first channels and customer trust.">
+              Градење на основа: бренд, продукт, први канали и доверба кај клиентите.
+            </p>
+          </div>
+          <div class="audience-card">
+            <h3 data-mk="Компании во раст" data-en="Scaling companies">Компании во раст</h3>
+            <p data-mk="Скалирање: тим, процеси, маркетинг и продажба на повисоко ниво." data-en="Scaling: team, processes, marketing and sales at a higher level.">
+              Скалирање: тим, процеси, маркетинг и продажба на повисоко ниво.
+            </p>
+          </div>
+          <div class="audience-card">
+            <h3 data-mk="Подготвени за извоз" data-en="Export-ready">Подготвени за извоз</h3>
+            <p data-mk="Позиционирање и go-to-market стратегија за странски пазари." data-en="Positioning and go-to-market strategy for foreign markets.">
+              Позиционирање и go-to-market стратегија за странски пазари.
+            </p>
+          </div>
+        </div>
+      </section>
 
-            <!-- Focus cards -->
-            <div id="focus" style="margin-top: 44px;">
-              <div class="section-head" style="margin-bottom: 18px;">
-                <h2 class="section-title">Фокус</h2>
-                <p class="section-sub">
-                  Стратегии што може да ги примениш веднаш: позиционирање, канали, продажба,
-                  бренд комуникација.
-                </p>
-              </div>
-
-              <div class="cards cards-3">
-                <div class="card">
-                  <h3>Стратегија</h3>
-                  <p>Јасно позиционирање, диференцијација и “што продаваме” без магла.</p>
-                </div>
-                <div class="card">
-                  <h3>Квалитет пред квантитет</h3>
-                  <p>Куратирани говорници и сегменти за да нема “филер” и празни теми.</p>
-                </div>
-                <div class="card">
-                  <h3>Реални можности</h3>
-                  <p>Вмрежување, партнерства и експо зона за директни контакти.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Audience cards -->
-            <div id="audience" style="margin-top: 44px;">
-              <div class="section-head" style="margin-bottom: 18px;">
-                <h2 class="section-title">За кого е</h2>
-                <p class="section-sub">Компании и тимови во различни фази на развој.</p>
-              </div>
-
-              <div class="cards cards-3">
-                <div class="card">
-                  <h3>Компании во развој</h3>
-                  <p>Градење на основа: бренд, продукт, први канали и доверба.</p>
-                </div>
-                <div class="card">
-                  <h3>Компании во раст</h3>
-                  <p>Скалирање: тим, процеси, маркетинг и продажба.</p>
-                </div>
-                <div class="card">
-                  <h3>Компании подготвени за извоз</h3>
-                  <p>Позиционирање и go-to-market за странски пазари.</p>
-                </div>
-              </div>
-            </div>
+      <!-- ========== CTA BANNER ========== -->
+      <section class="page-cta-banner reveal">
+        <h2 data-mk="Подготвен?" data-en="Ready?">Подготвен?</h2>
+        <p data-mk="Обезбеди си место на Бизнис Арена 2026." data-en="Secure your spot at Biznis Arena 2026.">Обезбеди си место на Бизнис Арена 2026.</p>
+        <a href="/tickets.html" class="btn primary" data-mk="Купи карта" data-en="Get Tickets">Купи карта</a>
       </section>
 
       <button class="back-to-top" type="button" aria-label="Назад горе">↑</button>

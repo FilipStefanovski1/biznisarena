@@ -312,6 +312,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // -----------------------
+  // Contact form (inline feedback)
+  // -----------------------
+  const contactForm = document.querySelector("#contactForm");
+  contactForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('button[type="submit"]');
+    if (btn) {
+      btn.textContent = "Испратено!";
+      btn.classList.add("btn-success");
+      btn.disabled = true;
+    }
+    contactForm.reset();
+    setTimeout(() => {
+      if (btn) {
+        btn.textContent = "Испрати";
+        btn.classList.remove("btn-success");
+        btn.disabled = false;
+      }
+    }, 3000);
+  });
+
+  // -----------------------
   // Sticky tickets CTA
   // -----------------------
   const stickyCta = document.querySelector(".sticky-cta");
