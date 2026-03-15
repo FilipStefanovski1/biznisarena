@@ -1188,6 +1188,8 @@ textarea:focus {
   border: 1px solid var(--line);
   overflow: hidden;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .speaker-card:hover {
@@ -1219,6 +1221,9 @@ textarea:focus {
     rgba(0, 0, 0, 0.85),
     rgba(0, 0, 0, 0.95)
   );
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .speaker-info h3 {
@@ -1241,6 +1246,7 @@ textarea:focus {
   text-transform: uppercase;
   color: var(--muted2);
   transition: color 0.25s ease;
+  margin-top: auto;
 }
 
 .speaker-card:hover .speaker-connect {
