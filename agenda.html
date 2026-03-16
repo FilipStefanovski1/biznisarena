@@ -93,114 +93,107 @@
     <main id="main">
 
       <!-- ========== PAGE HERO ========== -->
-      <section class="page-hero reveal">
-        <div class="page-hero-bg" aria-hidden="true">
-          <img src="/hero-bg.jpg" alt="" />
-        </div>
-        <div class="page-hero-content">
-          <h1 data-mk="Агенда" data-en="Agenda">Агенда</h1>
-          <p class="page-hero-sub" data-mk="Целосна програма на Бизнис Арена 2026 — говори, панели, експо, натпревар и вмрежување." data-en="Full program of Biznis Arena 2026 — talks, panels, expo, competition and networking.">
-            Целосна програма на Бизнис Арена 2026 — говори, панели, експо, натпревар и вмрежување.
+      <section class="subpage-hero reveal">
+        <div class="subpage-hero__inner">
+          <span class="subpage-hero__eyebrow" data-mk="БИЗНИС АРЕНА 2026" data-en="BIZNIS ARENA 2026">БИЗНИС АРЕНА 2026</span>
+          <h1 class="subpage-hero__title" data-mk="Агенда" data-en="Agenda">Агенда</h1>
+          <p class="subpage-hero__sub" data-mk="Целосна програма — говори, панели, експо, натпревар и вмрежување на едно место." data-en="Full program — talks, panels, expo, competition and networking in one place.">
+            Целосна програма — говори, панели, експо, натпревар и вмрежување на едно место.
           </p>
         </div>
       </section>
 
-      <!-- ========== SCHEDULE (keep accordion layout) ========== -->
-      <section class="agenda-page">
-        <div class="container agenda-layout">
-          <!-- LEFT -->
-          <aside class="agenda-left">
-            <div class="agenda-sparkles" aria-hidden="true">
-              <span></span><span></span><span></span><span></span>
-            </div>
+      <!-- ========== SCHEDULE ========== -->
+      <section class="agenda-v2">
+        <div class="container">
 
-            <h2 class="agenda-title" data-mk="Програма" data-en="Program">Програма</h2>
+          <div class="agenda-v2__head reveal">
+            <span class="agenda-v2__eyebrow" data-mk="1 ОКТОМВРИ 2026" data-en="OCTOBER 1, 2026">1 ОКТОМВРИ 2026</span>
+            <h2 class="agenda-v2__title" data-mk="Програма" data-en="Program">Програма</h2>
+            <p class="agenda-v2__sub" data-mk="Деталите и точните часови може да се менуваат како што се финализираат сегментите." data-en="Details and exact times may change as segments are finalized.">Деталите и точните часови може да се менуваат како што се финализираат сегментите.</p>
+          </div>
 
-            <p class="agenda-desc" data-mk="Преглед на агендата. Деталите и точните часови може да се менуваат како што се финализираат сегментите." data-en="Agenda overview. Details and exact times may change as segments are finalized.">
-              Преглед на агендата. Деталите и точните часови може да се менуваат
-              како што се финализираат сегментите.
-            </p>
+          <div class="agenda-v2__timeline">
 
-            <div class="agenda-left-actions">
-              <a class="agenda-outline-btn" href="#location" data-mk="Локација" data-en="Location">
-                Локација <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </aside>
-
-          <!-- RIGHT -->
-          <div class="agenda-right" aria-label="Агенда листа">
-            <details class="agenda-row" open>
-              <summary class="agenda-summary">
-                <span class="agenda-time">09:30–10:00</span>
-                <span class="agenda-name" data-mk="Отворање и добредојде" data-en="Opening & Welcome">Отворање и добредојде</span>
-                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+            <details class="agenda-v2__item" open>
+              <summary class="agenda-v2__summary">
+                <span class="agenda-v2__time">09:30–10:00</span>
+                <span class="agenda-v2__dot" aria-hidden="true"></span>
+                <span class="agenda-v2__name" data-mk="Отворање и добредојде" data-en="Opening & Welcome">Отворање и добредојде</span>
+                <svg class="agenda-v2__arrow" viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </summary>
-              <div class="agenda-panel">
+              <div class="agenda-v2__panel">
                 <p data-mk="Краток вовед во концептот на настанот, денешната структура и очекувани резултати." data-en="Brief introduction to the event concept, today's structure and expected outcomes.">Краток вовед во концептот на настанот, денешната структура и очекувани резултати.</p>
               </div>
             </details>
 
-            <details class="agenda-row">
-              <summary class="agenda-summary">
-                <span class="agenda-time">10:00–12:00</span>
-                <span class="agenda-name">BrandTalks</span>
-                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+            <details class="agenda-v2__item">
+              <summary class="agenda-v2__summary">
+                <span class="agenda-v2__time">10:00–12:00</span>
+                <span class="agenda-v2__dot" aria-hidden="true"></span>
+                <span class="agenda-v2__name">BrandTalks</span>
+                <svg class="agenda-v2__arrow" viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </summary>
-              <div class="agenda-panel">
+              <div class="agenda-v2__panel">
                 <p data-mk="Фокусирани говори со конкретни стратегии за раст, позиционирање и градење доверба." data-en="Focused talks with concrete strategies for growth, positioning and building trust.">Фокусирани говори со конкретни стратегии за раст, позиционирање и градење доверба.</p>
               </div>
             </details>
 
-            <details class="agenda-row">
-              <summary class="agenda-summary">
-                <span class="agenda-time">12:00–13:00</span>
-                <span class="agenda-name" data-mk="Пауза + Експо" data-en="Break + Expo">Пауза + Експо</span>
-                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+            <details class="agenda-v2__item">
+              <summary class="agenda-v2__summary">
+                <span class="agenda-v2__time">12:00–13:00</span>
+                <span class="agenda-v2__dot" aria-hidden="true"></span>
+                <span class="agenda-v2__name" data-mk="Пауза + Експо" data-en="Break + Expo">Пауза + Експо</span>
+                <svg class="agenda-v2__arrow" viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </summary>
-              <div class="agenda-panel">
+              <div class="agenda-v2__panel">
                 <p data-mk="Експо зона, демонстрации, дегустации и B2B разговори со компании и партнери." data-en="Expo zone, demonstrations, tastings and B2B conversations with companies and partners.">Експо зона, демонстрации, дегустации и B2B разговори со компании и партнери.</p>
               </div>
             </details>
 
-            <details class="agenda-row">
-              <summary class="agenda-summary">
-                <span class="agenda-time">13:00–15:00</span>
-                <span class="agenda-name" data-mk="Панели" data-en="Panels">Панели</span>
-                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+            <details class="agenda-v2__item">
+              <summary class="agenda-v2__summary">
+                <span class="agenda-v2__time">13:00–15:00</span>
+                <span class="agenda-v2__dot" aria-hidden="true"></span>
+                <span class="agenda-v2__name" data-mk="Панели" data-en="Panels">Панели</span>
+                <svg class="agenda-v2__arrow" viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </summary>
-              <div class="agenda-panel">
+              <div class="agenda-v2__panel">
                 <p data-mk="Дискусии за бренд стратегија, продажни канали, извоз и пазарно позиционирање." data-en="Discussions on brand strategy, sales channels, export and market positioning.">Дискусии за бренд стратегија, продажни канали, извоз и пазарно позиционирање.</p>
               </div>
             </details>
 
-            <details class="agenda-row">
-              <summary class="agenda-summary">
-                <span class="agenda-time">15:30–17:00</span>
-                <span class="agenda-name" data-mk="Натпревар (Pitch)" data-en="Competition (Pitch)">Натпревар (Pitch)</span>
-                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+            <details class="agenda-v2__item">
+              <summary class="agenda-v2__summary">
+                <span class="agenda-v2__time">15:30–17:00</span>
+                <span class="agenda-v2__dot" aria-hidden="true"></span>
+                <span class="agenda-v2__name" data-mk="Натпревар (Pitch)" data-en="Competition (Pitch)">Натпревар (Pitch)</span>
+                <svg class="agenda-v2__arrow" viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </summary>
-              <div class="agenda-panel">
+              <div class="agenda-v2__panel">
                 <p data-mk="Pitch сегмент за компании подготвени за интернационален настап и раст." data-en="Pitch segment for companies ready for international exposure and growth.">Pitch сегмент за компании подготвени за интернационален настап и раст.</p>
               </div>
             </details>
 
-            <details class="agenda-row">
-              <summary class="agenda-summary">
-                <span class="agenda-time">17:00–19:00</span>
-                <span class="agenda-name">Networking</span>
-                <span class="agenda-chevron" aria-hidden="true">⌄</span>
+            <details class="agenda-v2__item">
+              <summary class="agenda-v2__summary">
+                <span class="agenda-v2__time">17:00–19:00</span>
+                <span class="agenda-v2__dot" aria-hidden="true"></span>
+                <span class="agenda-v2__name">Networking</span>
+                <svg class="agenda-v2__arrow" viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </summary>
-              <div class="agenda-panel">
+              <div class="agenda-v2__panel">
                 <p data-mk="Структурирано и неформално вмрежување со гости, говорници и партнери." data-en="Structured and informal networking with guests, speakers and partners.">Структурирано и неформално вмрежување со гости, говорници и партнери.</p>
               </div>
             </details>
 
-            <div class="agenda-actions">
-              <a class="btn primary" href="/tickets.html" data-mk="Купи карта" data-en="Get Tickets">Купи карта</a>
-              <a class="btn ghost" href="/contact.html" data-mk="Контакт" data-en="Contact">Контакт</a>
-            </div>
           </div>
+
+          <div class="agenda-v2__actions">
+            <a class="btn primary" href="/tickets.html" data-mk="Купи карта" data-en="Get Tickets">Купи карта</a>
+            <a class="btn ghost" href="/contact.html" data-mk="Контакт" data-en="Contact">Контакт</a>
+          </div>
+
         </div>
       </section>
 
@@ -224,24 +217,34 @@
         </div>
       </div>
 
-      <!-- ========== VENUE — split section ========== -->
-      <section class="split-section reverse reveal">
-        <div class="split-img">
-          <div class="split-img-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
+      <!-- ========== VENUE ========== -->
+      <section class="venue-card-section reveal">
+        <div class="container">
+          <div class="venue-card">
+            <div class="venue-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" width="28" height="28">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <span class="venue-card__eyebrow" data-mk="ЛОКАЦИЈА" data-en="LOCATION">ЛОКАЦИЈА</span>
+            <h2 class="venue-card__title" data-mk="Место на одржување" data-en="Venue">Место на одржување</h2>
+            <p class="venue-card__desc" data-mk="Бизнис Арена 2026 ќе се одржи на 1 октомври во Скопје, Северна Македонија. Точната локација ќе биде објавена наскоро." data-en="Biznis Arena 2026 will be held on October 1st in Skopje, North Macedonia. The exact venue will be announced soon.">
+              Бизнис Арена 2026 ќе се одржи на 1 октомври во Скопје, Северна Македонија.
+              Точната локација ќе биде објавена наскоро.
+            </p>
+            <div class="venue-card__meta">
+              <div class="venue-card__detail">
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <span data-mk="1 Октомври 2026" data-en="October 1, 2026">1 Октомври 2026</span>
+              </div>
+              <div class="venue-card__detail">
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+                <span data-mk="Скопје, Северна Македонија" data-en="Skopje, North Macedonia">Скопје, Северна Македонија</span>
+              </div>
+            </div>
+            <a class="btn ghost venue-card__btn" href="#location" data-mk="Види на мапа" data-en="See on map">Види на мапа</a>
           </div>
-        </div>
-        <div class="split-text accent-bg">
-          <span class="split-label" data-mk="Локација" data-en="Location">Локација</span>
-          <h2 class="split-heading" data-mk="Место на одржување" data-en="Venue">Место на одржување</h2>
-          <p data-mk="Бизнис Арена 2026 ќе се одржи на 1 октомври во Скопје, Северна Македонија. Точната локација ќе биде објавена наскоро." data-en="Biznis Arena 2026 will be held on October 1st in Skopje, North Macedonia. The exact venue will be announced soon.">
-            Бизнис Арена 2026 ќе се одржи на 1 октомври во Скопје, Северна Македонија.
-            Точната локација ќе биде објавена наскоро.
-          </p>
-          <a class="btn ghost" href="#location" data-mk="Види на мапа" data-en="See on map">Види на мапа</a>
         </div>
       </section>
 

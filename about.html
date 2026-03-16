@@ -95,40 +95,34 @@
     <main id="main">
 
       <!-- ========== PAGE HERO ========== -->
-      <section class="page-hero reveal">
-        <div class="page-hero-bg" aria-hidden="true">
-          <img src="/hero-globe.png" alt="" />
-        </div>
-        <div class="page-hero-content">
-          <h1 data-mk="За настанот" data-en="About the event">За настанот</h1>
-          <p class="page-hero-sub" data-mk="Првата конференција посветена на македонски брендови, нивниот раст, позиционирање и извоз на меѓународни пазари." data-en="The first conference dedicated to Macedonian brands, their growth, positioning and export to international markets.">
-            Првата конференција посветена на македонски брендови, нивниот раст, позиционирање и извоз на меѓународни пазари.
+      <section class="subpage-hero reveal">
+        <div class="subpage-hero__inner">
+          <span class="subpage-hero__eyebrow" data-mk="БИЗНИС АРЕНА 2026" data-en="BIZNIS ARENA 2026">БИЗНИС АРЕНА 2026</span>
+          <h1 class="subpage-hero__title" data-mk="За настанот" data-en="About the Event">За настанот</h1>
+          <p class="subpage-hero__sub" data-mk="Првата конференција посветена на македонски брендови, нивниот раст и извоз на меѓународни пазари." data-en="The first conference dedicated to Macedonian brands, their growth and export to international markets.">
+            Првата конференција посветена на македонски брендови, нивниот раст и извоз на меѓународни пазари.
           </p>
         </div>
       </section>
 
-      <!-- ========== HOW IT STARTED — split image + text ========== -->
-      <section class="split-section reveal">
-        <div class="split-img">
-          <div class="split-img-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-            </svg>
+      <!-- ========== HOW IT STARTED ========== -->
+      <section class="content-block reveal">
+        <div class="container">
+          <div class="content-block__card">
+            <div class="content-block__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="content-block__eyebrow" data-mk="ПРИКАЗНА" data-en="OUR STORY">ПРИКАЗНА</span>
+            <h2 class="content-block__title" data-mk="Како започна" data-en="How it started">Како започна</h2>
+            <p class="content-block__text" data-mk="Бизнис Арена е конференција дизајнирана за компании што сакаат да растат паметно: подобро позиционирање, подобри канали, појасна продажба и подготовка за странски пазари." data-en="Biznis Arena is a conference designed for companies that want to grow smart: better positioning, better channels, clearer sales and preparation for foreign markets.">
+              Бизнис Арена е конференција дизајнирана за компании што сакаат да растат паметно: подобро позиционирање, подобри канали, појасна продажба и подготовка за странски пазари.
+            </p>
+            <p class="content-block__text" data-mk="Идејата е едноставна: практични стратегии што можеш да ги примениш веднаш, и луѓе со кои вреди да се поврзеш. Без филер. Со реални тактики, контакти и можности." data-en="The idea is simple: practical strategies you can apply immediately, and people worth connecting with. No filler. Real tactics, contacts and opportunities.">
+              Идејата е едноставна: практични стратегии што можеш да ги примениш веднаш, и луѓе со кои вреди да се поврзеш. Без филер. Со реални тактики, контакти и можности.
+            </p>
           </div>
-        </div>
-        <div class="split-text">
-          <span class="split-label" data-mk="Приказна" data-en="Our story">Приказна</span>
-          <h2 class="split-heading" data-mk="Како започна" data-en="How it started">Како започна</h2>
-          <p data-mk="Бизнис Арена е конференција дизајнирана за компании што сакаат да растат паметно: подобро позиционирање, подобри канали, појасна продажба и подготовка за странски пазари." data-en="Biznis Arena is a conference designed for companies that want to grow smart: better positioning, better channels, clearer sales and preparation for foreign markets.">
-            Бизнис Арена е конференција дизајнирана за компании што сакаат да растат
-            паметно: подобро позиционирање, подобри канали, појасна продажба и
-            подготовка за странски пазари.
-          </p>
-          <p data-mk="Идејата е едноставна: практични стратегии што можеш да ги примениш веднаш, и луѓе со кои вреди да се поврзеш. Без филер. Со реални тактики, контакти и можности." data-en="The idea is simple: practical strategies you can apply immediately, and people worth connecting with. No filler. Real tactics, contacts and opportunities.">
-            Идејата е едноставна: практични стратегии што можеш да ги примениш веднаш,
-            и луѓе со кои вреди да се поврзеш. Без филер. Со реални тактики, контакти
-            и можности.
-          </p>
         </div>
       </section>
 
@@ -193,27 +187,25 @@
         </div>
       </section>
 
-      <!-- ========== WHY — reversed split ========== -->
-      <section class="split-section reverse reveal">
-        <div class="split-img">
-          <div class="split-img-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-            </svg>
+      <!-- ========== WHY ========== -->
+      <section class="content-block reveal">
+        <div class="container">
+          <div class="content-block__card content-block__card--accent">
+            <div class="content-block__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <span class="content-block__eyebrow" data-mk="МИСИЈА" data-en="MISSION">МИСИЈА</span>
+            <h2 class="content-block__title" data-mk="Зошто постои" data-en="Why it exists">Зошто постои</h2>
+            <p class="content-block__text" data-mk="За да се намали хаосот од 'совети без реален контекст' и да се донесе јасна рамка за раст: бренд, маркетинг, продажба, операции и извоз." data-en="To cut through the noise of 'advice without real context' and deliver a clear framework for growth: brand, marketing, sales, operations and export.">
+              За да се намали хаосот од „совети без реален контекст" и да се донесе јасна рамка за раст: бренд, маркетинг, продажба, операции и извоз.
+            </p>
+            <p class="content-block__text" data-mk="Куратирани говорници и сегменти, со фокус на резултати и конкретни примери од регионот и пошироко." data-en="Curated speakers and segments, focused on results and concrete examples from the region and beyond.">
+              Куратирани говорници и сегменти, со фокус на резултати и конкретни примери од регионот и пошироко.
+            </p>
           </div>
-        </div>
-        <div class="split-text accent-bg">
-          <span class="split-label" data-mk="Мисија" data-en="Mission">Мисија</span>
-          <h2 class="split-heading" data-mk="Зошто постои" data-en="Why it exists">Зошто постои</h2>
-          <p data-mk="За да се намали хаосот од 'совети без реален контекст' и да се донесе јасна рамка за раст: бренд, маркетинг, продажба, операции и извоз." data-en="To cut through the noise of 'advice without real context' and deliver a clear framework for growth: brand, marketing, sales, operations and export.">
-            За да се намали хаосот од „совети без реален контекст" и да се донесе
-            јасна рамка за раст: бренд, маркетинг, продажба, операции и извоз.
-          </p>
-          <p data-mk="Куратирани говорници и сегменти, со фокус на резултати и конкретни примери од регионот и пошироко." data-en="Curated speakers and segments, focused on results and concrete examples from the region and beyond.">
-            Куратирани говорници и сегменти, со фокус на резултати и конкретни примери
-            од регионот и пошироко.
-          </p>
         </div>
       </section>
 
