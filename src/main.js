@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".navbar");
-  const backToTop = document.querySelector(".back-to-top");
 
   // Desktop nav links (only used for scrollspy on sections)
   const navLinks = Array.from(document.querySelectorAll(".nav-menu a"));
@@ -15,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ).matches;
 
   // -----------------------
-  // Sticky header + back-to-top
+  // Sticky header
   // -----------------------
   const onScroll = () => {
     const y = window.scrollY;
@@ -25,29 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
       else header.classList.remove("is-scrolled");
     }
 
-    if (backToTop) {
-      if (y > 600) backToTop.classList.add("show");
-      else backToTop.classList.remove("show");
-    }
-
     // Scrollspy (only if we have in-page sections)
     if (sections.length && navLinks.length) updateActiveNavLink();
   };
 
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
-
-  // -----------------------
-  // Back to top
-  // -----------------------
-  if (backToTop) {
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: prefersReducedMotion ? "auto" : "smooth",
-      });
-    });
-  }
 
   // -----------------------
   // Mobile nav toggle
@@ -114,6 +96,55 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     if (window.innerWidth > 900) closeMobileNav();
   });
+
+  // -----------------------
+  // Hero particles
+  // -----------------------
+  const particlesContainer = document.querySelector('.hero-particles');
+  if (particlesContainer && !prefersReducedMotion) {
+    for (let i = 0; i < 30; i++) {
+      const p = document.createElement('div');
+      p.className = 'hero-particle';
+      const size = Math.random() * 3 + 1;
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.animationDuration = (Math.random() * 8 + 6) + 's';
+      p.style.animationDelay = (Math.random() * 6) + 's';
+      p.style.opacity = Math.random() * 0.5 + 0.2;
+      particlesContainer.appendChild(p);
+    }
+  }
+
+  // -----------------------
+  // Parallax on hero globe
+  // -----------------------
+  const heroGlobe = document.querySelector('.hero-globe img');
+  if (heroGlobe && !prefersReducedMotion) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      heroGlobe.style.transform = `scale(1.05) translateY(${y * 0.15}px)`;
+    }, { passive: true });
+  }
+
+  // -----------------------
+  // Mouse tilt on hero content
+  // -----------------------
+  const heroContent = document.querySelector('.hero-content');
+  const heroSection = document.querySelector('.hero');
+  if (heroContent && heroSection && !prefersReducedMotion) {
+    heroSection.addEventListener('mousemove', (e) => {
+      const rect = heroSection.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      heroContent.style.transform = `translate(${x * 8}px, ${y * 8}px)`;
+    });
+    heroSection.addEventListener('mouseleave', () => {
+      heroContent.style.transform = 'translate(0, 0)';
+      heroContent.style.transition = 'transform 0.5s ease';
+      setTimeout(() => { heroContent.style.transition = ''; }, 500);
+    });
+  }
 
   // -----------------------
   // Reveal on scroll
@@ -350,23 +381,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSticky();
   }
 
-  // -----------------------
-  // Back-to-top progress ring
-  // -----------------------
-  const progressRing = document.querySelector(".btt-progress");
-  if (progressRing && backToTop) {
-    const updateProgress = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
-      const circumference = 2 * Math.PI * 19;
-      const offset = circumference - (progress * circumference);
-      progressRing.style.strokeDashoffset = offset;
-    };
-
-    window.addEventListener("scroll", updateProgress, { passive: true });
-    updateProgress();
-  }
 });
 
 // -----------------------
