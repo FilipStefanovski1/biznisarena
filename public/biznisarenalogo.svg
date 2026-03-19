@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="122" height="134" viewBox="0 0 122 134" fill="none">
+  <defs>
+    <linearGradient id="gt" x1="0" y1="0" x2="122" y2="66" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="gb" x1="0" y1="68" x2="122" y2="134" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e879f9"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <!-- Top shape - rounded parallelogram tapering right -->
+  <path d="M10 0 C4.5 0, 0 4.5, 0 10 L0 46 C0 51.5, 4.5 56, 10 56 L78 56 C84 56, 89.5 52, 92 46.5 L116 6 C119 0, 115 0, 110 0 Z" fill="url(#gt)"/>
+  <!-- Bottom shape -->
+  <path d="M10 68 C4.5 68, 0 72.5, 0 78 L0 114 C0 119.5, 4.5 124, 10 124 L78 124 C84 124, 89.5 120, 92 114.5 L116 74 C119 68, 115 68, 110 68 Z" fill="url(#gb)"/>
+</svg>

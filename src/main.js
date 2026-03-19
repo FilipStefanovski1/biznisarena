@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.02 }
     );
 
     revealEls.forEach((el) => io.observe(el));
@@ -299,7 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cdSecs = document.getElementById("cd-secs");
 
   if (cdDays) {
-    const eventDate = new Date("2026-10-01T09:00:00+02:00").getTime();
+    const eventDate = new Date("2026-10-14T09:00:00+02:00").getTime();
 
     const updateCountdown = () => {
       const now = Date.now();
@@ -379,6 +379,90 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", updateSticky, { passive: true });
     updateSticky();
+  }
+
+  // -----------------------
+  // Plexus network canvas
+  // -----------------------
+  const plexusTargets = document.querySelectorAll('.plexus-canvas');
+  if (plexusTargets.length && !prefersReducedMotion) {
+    plexusTargets.forEach((container) => {
+      const canvas = document.createElement('canvas');
+      container.appendChild(canvas);
+      const ctx = canvas.getContext('2d');
+
+      let w, h, points;
+      const POINT_COUNT = 40;
+      const MAX_DIST = 120;
+
+      const resize = () => {
+        w = container.offsetWidth;
+        h = container.offsetHeight;
+        canvas.width = w;
+        canvas.height = h;
+      };
+
+      const initPoints = () => {
+        points = [];
+        for (let i = 0; i < POINT_COUNT; i++) {
+          points.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.3,
+            vy: (Math.random() - 0.5) * 0.3,
+          });
+        }
+      };
+
+      const draw = () => {
+        ctx.clearRect(0, 0, w, h);
+
+        // Move points
+        points.forEach((p) => {
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+        });
+
+        // Draw lines
+        for (let i = 0; i < points.length; i++) {
+          for (let j = i + 1; j < points.length; j++) {
+            const dx = points[i].x - points[j].x;
+            const dy = points[i].y - points[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < MAX_DIST) {
+              const alpha = 1 - dist / MAX_DIST;
+              ctx.strokeStyle = `rgba(124, 92, 252, ${alpha * 0.5})`;
+              ctx.lineWidth = 0.5;
+              ctx.beginPath();
+              ctx.moveTo(points[i].x, points[i].y);
+              ctx.lineTo(points[j].x, points[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        // Draw dots
+        points.forEach((p) => {
+          ctx.fillStyle = 'rgba(168, 85, 247, 0.6)';
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        requestAnimationFrame(draw);
+      };
+
+      resize();
+      initPoints();
+      draw();
+
+      window.addEventListener('resize', () => {
+        resize();
+        initPoints();
+      });
+    });
   }
 
 });

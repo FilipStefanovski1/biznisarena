@@ -2,10 +2,10 @@
    TOKENS
 ===================== */
 :root {
-  --black: #0e0e0e;
-  --dark: #141414;
-  --panel: #191919;
-  --panel2: #101010;
+  --black: #1a1a2e;
+  --dark: #1f1f35;
+  --panel: #25253d;
+  --panel2: #1c1c30;
   --yellow: #7c5cfc;
   --red: #a855f7;
   --white: #ffffff;
@@ -35,7 +35,7 @@ html {
 }
 
 body {
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Space Grotesk", system-ui, sans-serif;
   background: var(--black);
   color: var(--white);
   overflow-x: hidden;
@@ -61,7 +61,7 @@ a {
   left: -999px;
   top: 12px;
   z-index: 9999;
-  background: #000;
+  background: var(--black);
   border: 1px solid rgba(255, 255, 255, 0.25);
   padding: 10px 12px;
 }
@@ -273,7 +273,6 @@ body.no-scroll {
   justify-content: center;
   padding: 100px 20px 80px;
   overflow: hidden;
-  background: var(--black);
 }
 
 .hero-overlay {
@@ -354,7 +353,7 @@ body.no-scroll {
 .hero-content {
   position: relative;
   z-index: 3;
-  max-width: 680px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 64px 24px;
   text-align: center;
@@ -372,7 +371,7 @@ body.no-scroll {
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 6vw, 5.2rem);
+  font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 900;
   line-height: 1.05;
   margin: 22px 0 16px;
@@ -384,9 +383,9 @@ body.no-scroll {
 /* Hero heading inherits scale-in from parent h1 */
 
 .hero-lead {
-  max-width: 520px;
+  max-width: 700px;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   margin: 0 auto 28px;
   opacity: 0;
@@ -598,7 +597,7 @@ body.no-scroll {
 }
 
 .section.dark {
-  background: #0b0b0b;
+  background: var(--black);
 }
 
 .container {
@@ -943,7 +942,7 @@ textarea:focus {
 ===================== */
 .partners-showcase {
   padding: 0 24px 80px;
-  background: #0b0b0b;
+  background: var(--black);
 }
 
 .partners-showcase__inner {
@@ -1113,7 +1112,7 @@ textarea:focus {
    FOOTER
 ===================== */
 .footer-main {
-  background: #0b0b0b;
+  background: var(--black);
   padding: 80px 40px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -1285,7 +1284,7 @@ textarea:focus {
    SPEAKERS SECTION (old grid)
 ===================== */
 .speakers {
-  background: #0b0b0b;
+  background: var(--black);
 }
 
 .speakers-head {
@@ -1329,7 +1328,7 @@ textarea:focus {
 }
 
 .speaker-card {
-  background: #111;
+  background: var(--dark);
   border: 1px solid var(--line);
   overflow: hidden;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -1396,6 +1395,26 @@ textarea:focus {
 
 .speaker-card:hover .speaker-connect {
   color: var(--white);
+}
+
+/* LinkedIn icon on small speaker cards */
+.speaker-linkedin {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  color: var(--muted2);
+  transition: color 0.25s ease, transform 0.2s ease;
+}
+
+.speaker-linkedin svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.speaker-card:hover .speaker-linkedin {
+  color: #0a66c2;
+  transform: translateY(-2px);
 }
 
 /* =====================
@@ -1521,11 +1540,6 @@ textarea:focus {
 
   .hero-globe {
     inset: 0;
-    opacity: 0.35;
-  }
-
-  .hero-globe img {
-    object-position: center center;
   }
 
   .hero-content {
@@ -2087,7 +2101,7 @@ textarea:focus {
 ===================== */
 .agenda-page {
   padding: 160px 24px 96px;
-  background: #0b0b0b;
+  background: var(--black);
   border-top: 1px solid var(--line);
 }
 
@@ -2275,7 +2289,7 @@ textarea:focus {
 ===================== */
 .agenda-v2 {
   padding: 80px 24px 96px;
-  background: #0b0b0b;
+  background: var(--black);
   border-top: 1px solid var(--line);
   position: relative;
   overflow: hidden;
@@ -2495,7 +2509,7 @@ textarea:focus {
 ===================== */
 .venue-card-section {
   padding: 80px 24px;
-  background: #0b0b0b;
+  background: var(--black);
 }
 
 .venue-card {
@@ -2604,7 +2618,7 @@ textarea:focus {
 ===================== */
 .content-block {
   padding: 48px 24px 64px;
-  background: #0b0b0b;
+  background: var(--black);
 }
 
 .subpage-hero + .content-block {
@@ -3511,7 +3525,7 @@ body::after {
   position: relative;
   padding: 160px 24px 72px;
   text-align: center;
-  background: #0b0b0b;
+  background: var(--black);
   overflow: hidden;
 }
 
@@ -4125,5 +4139,491 @@ body::after {
 
   .subpage-hero + .content-block {
     padding-top: 0;
+  }
+}
+
+
+/* =====================
+   DECORATIVE GLOW ORBS
+===================== */
+/* Ambient glow blobs placed on alternating corners of sections */
+
+.section,
+.stats-row,
+.split-section,
+.features-section,
+.page-cta-banner,
+.agenda-v2,
+.venue-card-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top-left glow on odd sections */
+.section:nth-of-type(odd)::before,
+.split-section:nth-of-type(odd)::before,
+.features-section::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  left: -180px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124, 92, 252, 0.15) 0%, rgba(124, 92, 252, 0.05) 40%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Bottom-right glow on even sections */
+.section:nth-of-type(even)::after,
+.split-section:nth-of-type(even)::after {
+  content: "";
+  position: absolute;
+  bottom: -180px;
+  right: -180px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, rgba(168, 85, 247, 0.04) 40%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Additional accent glow on specific areas */
+.stats-row::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(124, 92, 252, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* CTA banner glows on both corners */
+.page-cta-banner::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 92, 252, 0.18) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-cta-banner::after {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  left: -120px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.14) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Venue section glow */
+.venue-card-section::before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(124, 92, 252, 0.12) 0%, transparent 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.agenda-v2::after {
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content stays above glows */
+.section > .container,
+.section > .section-head,
+.stats-row > *,
+.split-section > .container,
+.features-section > .container,
+.page-cta-banner > *,
+.agenda-v2 > .container,
+.venue-card-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =====================
+   NETWORK / PLEXUS LINES
+===================== */
+/* Geometric mesh decoration using SVG backgrounds */
+
+.bg-mesh {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.07;
+  overflow: hidden;
+}
+
+.bg-mesh svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Decorative corner lines via CSS */
+.corner-lines {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.corner-lines--tl {
+  top: 24px;
+  left: 24px;
+  width: 120px;
+  height: 120px;
+  border-top: 1px solid rgba(124, 92, 252, 0.15);
+  border-left: 1px solid rgba(124, 92, 252, 0.15);
+}
+
+.corner-lines--tr {
+  top: 24px;
+  right: 24px;
+  width: 120px;
+  height: 120px;
+  border-top: 1px solid rgba(168, 85, 247, 0.15);
+  border-right: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+.corner-lines--bl {
+  bottom: 24px;
+  left: 24px;
+  width: 120px;
+  height: 120px;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+  border-left: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+.corner-lines--br {
+  bottom: 24px;
+  right: 24px;
+  width: 120px;
+  height: 120px;
+  border-bottom: 1px solid rgba(124, 92, 252, 0.15);
+  border-right: 1px solid rgba(124, 92, 252, 0.15);
+}
+
+/* Horizontal accent line dividers */
+.accent-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(124, 92, 252, 0.2) 20%, rgba(168, 85, 247, 0.2) 80%, transparent 100%);
+}
+
+.accent-line--top { top: 0; }
+.accent-line--bottom { bottom: 0; }
+
+/* Dot grid pattern for empty areas */
+.bg-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+  background-image: radial-gradient(rgba(124, 92, 252, 0.15) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Crosshair decorative element */
+.deco-cross {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.2;
+}
+
+.deco-cross::before,
+.deco-cross::after {
+  content: "";
+  position: absolute;
+  background: rgba(124, 92, 252, 0.5);
+}
+
+.deco-cross::before {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+.deco-cross::after {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+/* Diamond decorative element */
+.deco-diamond {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(124, 92, 252, 0.25);
+  transform: rotate(45deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* =====================
+   PLEXUS CANVAS
+===================== */
+.plexus-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.06;
+}
+
+@media (max-width: 768px) {
+  .corner-lines--tl,
+  .corner-lines--tr,
+  .corner-lines--bl,
+  .corner-lines--br {
+    width: 60px;
+    height: 60px;
+  }
+
+  .section:nth-of-type(odd)::before,
+  .section:nth-of-type(even)::after,
+  .page-cta-banner::before,
+  .page-cta-banner::after {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+
+/* =====================
+   BLURRED MESH PATTERN
+===================== */
+/* Network mesh image placed as blurred background decoration */
+
+.bg-mesh-blur {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  background: url('/mesh-pattern.svg') no-repeat center center;
+  background-size: contain;
+  opacity: 0.06;
+  filter: blur(2px);
+}
+
+/* Variant positions */
+.bg-mesh-blur--tl {
+  top: -60px;
+  left: -80px;
+  width: 500px;
+  height: 380px;
+}
+
+.bg-mesh-blur--tr {
+  top: -40px;
+  right: -80px;
+  width: 500px;
+  height: 380px;
+  transform: scaleX(-1);
+}
+
+.bg-mesh-blur--bl {
+  bottom: -60px;
+  left: -80px;
+  width: 500px;
+  height: 380px;
+  transform: scaleY(-1);
+}
+
+.bg-mesh-blur--br {
+  bottom: -40px;
+  right: -80px;
+  width: 500px;
+  height: 380px;
+  transform: scale(-1, -1);
+}
+
+.bg-mesh-blur--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 500px;
+  opacity: 0.04;
+  filter: blur(3px);
+}
+
+.bg-mesh-blur--wide {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  opacity: 0.035;
+  filter: blur(1.5px);
+}
+
+@media (max-width: 768px) {
+  .bg-mesh-blur--tl,
+  .bg-mesh-blur--tr,
+  .bg-mesh-blur--bl,
+  .bg-mesh-blur--br {
+    width: 300px;
+    height: 230px;
+  }
+
+  .bg-mesh-blur--center {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+
+/* =====================
+   LOGO WATERMARK
+===================== */
+/* Subtle white-lines logo placed as faded background filler */
+
+.bg-logo-watermark {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  background: url('/whitelineslogo.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.025;
+  filter: blur(1px);
+  width: 420px;
+  height: 420px;
+}
+
+/* Corner & position variants */
+.bg-logo-watermark--tl {
+  top: -40px;
+  left: -60px;
+}
+
+.bg-logo-watermark--tr {
+  top: -40px;
+  right: -60px;
+}
+
+.bg-logo-watermark--bl {
+  bottom: -40px;
+  left: -60px;
+}
+
+.bg-logo-watermark--br {
+  bottom: -40px;
+  right: -60px;
+}
+
+.bg-logo-watermark--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  opacity: 0.02;
+}
+
+.bg-logo-watermark--left {
+  top: 50%;
+  left: -80px;
+  transform: translateY(-50%);
+}
+
+.bg-logo-watermark--right {
+  top: 50%;
+  right: -80px;
+  transform: translateY(-50%);
+}
+
+/* Larger faded version for hero / CTA areas */
+.bg-logo-watermark--lg {
+  width: 600px;
+  height: 600px;
+  opacity: 0.018;
+  filter: blur(2px);
+}
+
+/* Smaller version for tighter sections */
+.bg-logo-watermark--sm {
+  width: 260px;
+  height: 260px;
+  opacity: 0.03;
+}
+
+/* Rotated variants for visual variety */
+.bg-logo-watermark--rotate15 {
+  transform: rotate(15deg);
+}
+
+.bg-logo-watermark--rotate-15 {
+  transform: rotate(-15deg);
+}
+
+.bg-logo-watermark--rotate30 {
+  transform: rotate(30deg);
+}
+
+@media (max-width: 768px) {
+  .bg-logo-watermark {
+    width: 260px;
+    height: 260px;
+  }
+
+  .bg-logo-watermark--lg {
+    width: 360px;
+    height: 360px;
+  }
+
+  .bg-logo-watermark--sm {
+    width: 180px;
+    height: 180px;
+  }
+
+  .bg-logo-watermark--center {
+    width: 300px;
+    height: 300px;
   }
 }
