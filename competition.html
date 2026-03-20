@@ -79,40 +79,68 @@
     <main id="main">
 
       <!-- ========== PAGE HERO ========== -->
-      <section class="subpage-hero reveal">
+      <section class="subpage-hero subpage-hero--competition reveal" style="position:relative;overflow:hidden;">
+        <div class="bg-logo-watermark bg-logo-watermark--right bg-logo-watermark--lg bg-logo-watermark--rotate30" aria-hidden="true"></div>
+        <div class="deco-cross" style="top:25%;left:8%" aria-hidden="true"></div>
+        <div class="deco-diamond" style="bottom:15%;left:12%" aria-hidden="true"></div>
+        <div class="deco-diamond" style="top:20%;right:8%" aria-hidden="true"></div>
+
         <div class="subpage-hero__inner">
-          <span class="subpage-hero__eyebrow" data-mk="Бизнис Арена 2026" data-en="Biznis Arena 2026">Бизнис Арена 2026</span>
-          <h1 class="subpage-hero__title" data-mk="Натпревар" data-en="Competition">Натпревар</h1>
-          <p class="subpage-hero__sub" data-mk="Pitch сегмент за компании подготвени за интернационален настап и реална изводливост." data-en="Pitch segment for companies ready for international exposure and real feasibility.">
-            Pitch сегмент за компании подготвени за интернационален настап и реална изводливост.
-          </p>
+          <div class="subpage-hero__text-col">
+            <span class="subpage-hero__eyebrow" data-mk="Pitch натпревар" data-en="Pitch Competition">Pitch натпревар</span>
+            <h1 class="subpage-hero__title subpage-hero__title--gradient" data-mk="Натпревар" data-en="Competition">Натпревар</h1>
+            <p class="subpage-hero__sub" data-mk="Pitch сегмент за компании подготвени за интернационален настап и реална изводливост." data-en="Pitch segment for companies ready for international exposure and real feasibility.">
+              Pitch сегмент за компании подготвени за интернационален настап и реална изводливост.
+            </p>
+            <div class="subpage-hero__actions">
+              <a href="#sweden-form" class="btn primary" data-mk="Аплицирај сега" data-en="Apply now">Аплицирај сега</a>
+            </div>
+          </div>
+
+          <div class="hero-process-card" aria-label="Преглед на процес">
+            <div class="hero-process-step">
+              <span class="hero-process-num">01</span>
+              <div>
+                <strong data-mk="Апликација" data-en="Application">Апликација</strong>
+                <span data-mk="Кратка пријава" data-en="Short application">Кратка пријава</span>
+              </div>
+            </div>
+            <div class="hero-process-step">
+              <span class="hero-process-num">02</span>
+              <div>
+                <strong data-mk="Селекција" data-en="Selection">Селекција</strong>
+                <span data-mk="Избор на финалисти" data-en="Finalist selection">Избор на финалисти</span>
+              </div>
+            </div>
+            <div class="hero-process-step">
+              <span class="hero-process-num">03</span>
+              <div>
+                <strong data-mk="Pitch на сцена" data-en="Pitch on stage">Pitch на сцена</strong>
+                <span data-mk="Пред жири и публика" data-en="Before jury and audience">Пред жири и публика</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- ========== SWEDEN ENTRY ========== -->
-      <section class="content-block reveal" style="position:relative;overflow:hidden;">
-        <div class="bg-logo-watermark bg-logo-watermark--tr bg-logo-watermark--lg bg-logo-watermark--rotate-15" aria-hidden="true"></div>
-        <div class="container">
-          <div class="content-block__card content-block__card--accent">
-            <div class="content-block__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <span class="content-block__eyebrow" data-mk="Повик" data-en="Call">Повик</span>
-            <h2 class="content-block__title" data-mk="Entry to the Swedish Market" data-en="Entry to the Swedish Market">Entry to the Swedish Market</h2>
-            <p class="content-block__text" data-mk="Здружението на млади претприемачи Phoenix Rising, во соработка со Шведско-Македонската Стопанска Комора, објавува повик за компании кои сакаат да се пласираат на Шведскиот пазар." data-en="The youth entrepreneurship association Phoenix Rising, in collaboration with the Swedish-Macedonian Chamber of Commerce, announces a call for companies looking to enter the Swedish market.">
-              Здружението на млади претприемачи <strong>Phoenix Rising</strong>, во соработка со
-              <strong>Шведско-Македонската Стопанска Комора</strong>, објавува повик за компании
-              кои сакаат да се пласираат на Шведскиот пазар.
-            </p>
-            <p class="content-block__text" data-mk="Доколку бидете избрани, вашата компанија ќе добие финансиска и нефинансиска поддршка за влез во Шведскиот пазар." data-en="If selected, your company will receive financial and non-financial support for entering the Swedish market.">
-              Доколку бидете избрани, вашата компанија ќе добие
-              <strong>финансиска</strong> и <strong>нефинансиска</strong> поддршка за влез во Шведскиот пазар.
-            </p>
-            <a class="btn primary" href="#sweden-form" data-mk="Аплицирај сега" data-en="Apply now">Аплицирај сега</a>
-          </div>
+      <section class="split-section reverse reveal">
+        <div class="split-text">
+          <span class="split-label" data-mk="Повик" data-en="Call">Повик</span>
+          <h2 class="split-heading" data-mk="Entry to the Swedish Market" data-en="Entry to the Swedish Market">Entry to the<br>Swedish Market</h2>
+          <p data-mk="Здружението на млади претприемачи Phoenix Rising, во соработка со Шведско-Македонската Стопанска Комора, објавува повик за компании кои сакаат да се пласираат на Шведскиот пазар." data-en="The youth entrepreneurship association Phoenix Rising, in collaboration with the Swedish-Macedonian Chamber of Commerce, announces a call for companies looking to enter the Swedish market.">
+            Здружението на млади претприемачи <strong>Phoenix Rising</strong>, во соработка со
+            <strong>Шведско-Македонската Стопанска Комора</strong>, објавува повик за компании
+            кои сакаат да се пласираат на Шведскиот пазар.
+          </p>
+          <p data-mk="Доколку бидете избрани, вашата компанија ќе добие финансиска и нефинансиска поддршка за влез во Шведскиот пазар." data-en="If selected, your company will receive financial and non-financial support for entering the Swedish market.">
+            Доколку бидете избрани, вашата компанија ќе добие
+            <strong>финансиска</strong> и <strong>нефинансиска</strong> поддршка за влез во Шведскиот пазар.
+          </p>
+          <a class="btn primary" href="#sweden-form" data-mk="Аплицирај сега" data-en="Apply now">Аплицирај сега</a>
+        </div>
+        <div class="split-img">
+          <img src="/flags-mk-se.jpg" alt="Македонско и Шведско знаме" onerror="this.parentElement.innerHTML='<div class=split-img-placeholder></div>'" />
         </div>
       </section>
 
@@ -213,8 +241,8 @@
       <!-- ========== APPLICATION FORM SECTION ========== -->
       <section class="form-section" id="sweden-form" style="padding: 80px 40px; background: var(--dark); scroll-margin-top: 100px;">
         <div style="max-width: 800px; margin: 0 auto;">
-          <div class="section-head" style="margin-bottom: 40px;">
-            <h2 class="section-title" data-mk="Апликација — Swedish Market" data-en="Application — Swedish Market" style="font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; text-transform: uppercase;">
+          <div class="section-head reveal" style="margin-bottom: 40px;">
+            <h2 class="section-title" data-mk="Апликација — Swedish Market" data-en="Application — Swedish Market" style="font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900;">
               Апликација — Swedish Market
             </h2>
             <p class="section-sub" data-mk="Пополнете ги полињата подолу за да аплицирате." data-en="Fill in the fields below to apply." style="margin-top: 12px; color: var(--muted);">
@@ -469,7 +497,7 @@
         <div class="footer-container">
           <div class="footer-col footer-brand">
             <div class="footer-logo">
-              <img src="/logotext.png" alt="Biznis Arena 2026 Logo" />
+              <img src="/logopurple.png" alt="Biznis Arena 2026 Logo" />
             </div>
 
             <p class="footer-desc">
