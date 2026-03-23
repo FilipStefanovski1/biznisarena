@@ -999,6 +999,81 @@ textarea:focus {
   opacity: 1;
 }
 
+/* =====================
+   LOGO MARQUEE (auto-scroll)
+===================== */
+.logo-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.logo-marquee__track {
+  display: flex;
+  align-items: center;
+  gap: 4.5rem;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.logo-marquee:hover .logo-marquee__track {
+  animation-play-state: paused;
+}
+
+.logo-marquee__item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  padding: 0 12px;
+}
+
+.logo-marquee__item img {
+  height: 72px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.logo-marquee__item:hover img {
+  opacity: 1;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-marquee__track {
+    gap: 2.5rem;
+  }
+  .logo-marquee__item img {
+    height: 52px;
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-marquee__track {
+    gap: 2.5rem;
+    animation-duration: 25s;
+  }
+  .logo-marquee__item img {
+    height: 42px;
+    max-width: 130px;
+  }
+}
+
 /* Legacy fallback */
 .partners-grid {
   display: grid;
@@ -2960,6 +3035,124 @@ textarea:focus {
       transparent 55%
     ),
     #0b0b0b;
+}
+
+/* =====================
+   EXPECT – DASHBOARD STYLE
+===================== */
+.expect-dash {
+  margin-bottom: 0;
+}
+
+/* --- Hero banner card --- */
+.expect-dash__banner {
+  background: rgba(124, 92, 252, 0.08);
+  border-radius: 28px;
+  padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 72px);
+  margin-bottom: 28px;
+}
+
+.expect-dash__title {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  color: var(--white);
+  margin: 0 0 20px;
+  max-width: 14ch;
+}
+
+.expect-dash__sub {
+  max-width: 52ch;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0 0 32px;
+}
+
+.expect-dash__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  border-radius: 100px;
+  background: var(--yellow);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.expect-dash__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(124, 92, 252, 0.35);
+}
+
+/* --- 4-column feature grid --- */
+.expect-dash__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* --- Individual feature card --- */
+.expect-dash__card {
+  position: relative;
+  background: rgba(124, 92, 252, 0.06);
+  border: 2px dashed rgba(124, 92, 252, 0.22);
+  border-radius: 20px;
+  padding: 36px 28px 32px;
+  transition: transform 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.expect-dash__card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(124, 92, 252, 0.45);
+  box-shadow: 0 16px 40px rgba(124, 92, 252, 0.08);
+}
+
+.expect-dash__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 20px;
+  color: var(--yellow);
+}
+
+.expect-dash__card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--white);
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.expect-dash__card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.50);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1000px) {
+  .expect-dash__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .expect-dash__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expect-dash__banner {
+    border-radius: 20px;
+  }
 }
 
 /* Each block inside the unified section */

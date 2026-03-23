@@ -73,7 +73,7 @@
 <header class="navbar">
   <div class="nav-inner">
     <a class="nav-logo" href="index.html" aria-label="Почетна">
-      <img src="/logopurple.png" alt="Бизнис Арена" />
+      <img src="/BiznisArenaLogotekst.png" alt="Бизнис Арена" />
     </a>
 
     <nav class="nav-menu" aria-label="Навигација">
@@ -371,43 +371,53 @@
     <!-- DIVIDER -->
     <div class="split-divider" aria-hidden="true"></div>
 
-    <!-- EXPECT -->
-    <div class="split-block" id="expect">
-      <div class="split-block__header reveal">
-        <span class="split-eyebrow" data-mk="Програма" data-en="Program">Програма</span>
-        <h2 class="split-title" data-mk="Што да очекуваш" data-en="What to Expect">Што да очекуваш</h2>
-        <p class="split-sub">
-          Практична вредност, релевантни приказни и вистински можности.
+    <!-- EXPECT – dashboard-style -->
+    <div class="expect-dash" id="expect">
+
+      <!-- Hero banner card -->
+      <div class="expect-dash__banner reveal">
+        <h2 class="expect-dash__title" data-mk="Што да очекуваш" data-en="What to Expect">Што да очекуваш</h2>
+        <p class="expect-dash__sub">
+          Од агенда до финален извештај – еден настан каде добиваш сè: знаење, контакти и можности.
         </p>
-        <a class="btn ghost split-btn" href="agenda.html">Види агенда</a>
+        <a class="expect-dash__cta" href="agenda.html" data-mk="Види агенда" data-en="View Agenda">Види агенда</a>
       </div>
 
-      <div class="split-grid split-grid--5">
-        <article class="split-card reveal">
-          <h3>Најдобрите македонски брендови</h3>
-          <p>Избор од компании што градат силни производи и доверба.</p>
+      <!-- 4-column feature grid (changed from 5) -->
+      <div class="expect-dash__grid">
+        <article class="expect-dash__card reveal">
+          <span class="expect-dash__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="12" y2="15"/></svg>
+          </span>
+          <h3 data-mk="Силни говорници" data-en="Top Speakers">Силни говорници</h3>
+          <p>Искуства, предизвици и стратегии од луѓе кои ги направиле работите да функционираат.</p>
         </article>
 
-        <article class="split-card reveal">
-          <h3>Силни говорници</h3>
-          <p>Искуства, предизвици и стратегии што функционираат.</p>
+        <article class="expect-dash__card reveal">
+          <span class="expect-dash__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </span>
+          <h3 data-mk="Експо зона" data-en="Expo Zone">Експо зона</h3>
+          <p>Простор за презентација, демонстрација и нови партнерства — сè на едно место.</p>
         </article>
 
-        <article class="split-card reveal">
-          <h3>Експо зона</h3>
-          <p>Простор за презентација, демонстрација и нови партнерства.</p>
+        <article class="expect-dash__card reveal">
+          <span class="expect-dash__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <h3 data-mk="Вмрежување" data-en="Networking">Вмрежување</h3>
+          <p>Контакти со компании, партнери, медиуми и институции — директно и неформално.</p>
         </article>
 
-        <article class="split-card reveal">
-          <h3>Натпревар за извоз</h3>
-          <p>Пич за компании подготвени за настап на странски пазари.</p>
-        </article>
-
-        <article class="split-card reveal">
-          <h3>Вмрежување</h3>
-          <p>Контакти со компании, партнери, медиуми и институции.</p>
+        <article class="expect-dash__card reveal">
+          <span class="expect-dash__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </span>
+          <h3 data-mk="Натпревар за извоз" data-en="Export Competition">Натпревар за извоз</h3>
+          <p>Пич можност за компании подготвени за настап на странски пазари.</p>
         </article>
       </div>
+
     </div>
 
     <!-- DIVIDER -->
@@ -426,13 +436,13 @@
 
       <div class="split-grid split-grid--3 split-grid--forwho">
         <article class="split-card reveal">
-          <h3>Компании во развој</h3>
-          <p>Инспирација, знаење и контакти за следниот чекор на вашиот бизнис.</p>
+          <h3>Претприемачи</h3>
+          <p>Знаење и контакти за следниот голем чекор.</p>
         </article>
 
         <article class="split-card reveal">
-          <h3>Компании во раст</h3>
-          <p>Стратегии за скалирање, брендирање и освојување нови пазари.</p>
+          <h3>Тимови и компании</h3>
+          <p>Стратегии за организација, раст и нови пазари.</p>
         </article>
 
         <article class="split-card reveal">
