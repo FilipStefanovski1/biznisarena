@@ -1,6 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".navbar");
 
+  // Footer: highlight current page link
+  const ftLinks = document.querySelectorAll(".ft__nav a");
+  const currentPath = window.location.pathname.replace(/\/$/, "") || "/index.html";
+  ftLinks.forEach((a) => {
+    const href = a.getAttribute("href") || "";
+    const hrefPath = href.replace(/\/$/, "") || "/index.html";
+    if (currentPath.endsWith(hrefPath) || (currentPath === "/" && hrefPath === "/index.html")) {
+      a.classList.add("ft--active");
+    }
+  });
+
   // Desktop nav links (only used for scrollspy on sections)
   const navLinks = Array.from(document.querySelectorAll(".nav-menu a"));
   const sections = Array.from(document.querySelectorAll("section[id]"));
@@ -259,7 +270,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navLinks.forEach((a) => {
       const href = a.getAttribute("href") || "";
-      const id = href.startsWith("#") ? href.slice(1) : null;
+      // Only toggle active on anchor (#) links; leave subpage links untouched
+      if (!href.startsWith("#")) return;
+      const id = href.slice(1);
       a.classList.toggle("active", !!id && id === currentId);
     });
   }

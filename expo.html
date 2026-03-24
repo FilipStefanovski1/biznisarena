@@ -33,7 +33,7 @@
     <header class="navbar">
       <div class="nav-inner">
         <a class="nav-logo" href="/" aria-label="Почетна">
-          <img src="/BiznisArenaLogotekst.png" alt="Бизнис Арена" />
+          <img src="/logopurple.png" alt="Бизнис Арена" />
         </a>
 
         <nav class="nav-menu" aria-label="Навигација">
@@ -272,79 +272,50 @@
       </section>
 
       <!-- FOOTER -->
-      <footer class="footer-main">
-        <div class="footer-container">
-          <div class="footer-col footer-brand">
-            <div class="footer-logo">
-              <img src="/logopurple.png" alt="Biznis Arena 2026 Logo" />
-            </div>
-
-            <p class="footer-desc">
-              Најголемиот настан за бизнис, технологија и инвестиции во регионот.
-              Бидете дел од иднината.
-            </p>
-
-            <div class="footer-socials">
-              <a
-                href="https://www.instagram.com/biznisarena/"
-                class="social-circle"
-                aria-label="Instagram"
-                target="_blank"
-                rel="noopener"
-              >
-                <svg viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
-                  <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/>
-                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
-                </svg>
-              </a>
-
-              <a href="#" class="social-circle" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/>
-                  <path d="M8 11v5M8 8h.01M12 16v-3a2 2 0 114 0v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                </svg>
-              </a>
-
-              <a href="#" class="social-circle" aria-label="X">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="footer-col">
-            <h4 class="footer-heading">Навигација</h4>
-            <ul class="footer-links">
-              <li><a href="/">Почетна</a></li>
-              <li><a href="/agenda.html">Програма</a></li>
-              <li><a href="/tickets.html">Билети</a></li>
-              <li><a href="/partners.html">Партнери</a></li>
-              <li><a href="/contact.html">Контакт</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4 class="footer-heading">Билтен</h4>
-            <p class="footer-subtext">Пријавете се за најнови информации</p>
-
-            <div class="newsletter">
-              <input type="email" placeholder="Email адреса" aria-label="Email за билтен" />
-              <button type="button" aria-label="Пријави се">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M4 8l8 5 8-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/>
-                </svg>
-              </button>
-            </div>
-          </div>
+                  <footer class="ft">
+        <div class="ft__blobs" aria-hidden="true">
+          <div class="ft__blob ft__blob--1"></div>
+          <div class="ft__blob ft__blob--2"></div>
+          <div class="ft__blob ft__blob--3"></div>
         </div>
 
-        <div class="footer-bottom">
-          <span>© 2026 Biznis Arena. Сите права се задржани.</span>
+        <div class="ft__inner">
+          <!-- Left: brand -->
+          <div class="ft__brand">
+            <div class="ft__logo">
+              <img src="/logopurple.png" alt="Бизнис Арена 2026" />
+            </div>
+            <p class="ft__desc">
+              Конференција за македонски брендови, раст и пазарна експанзија. Бидете дел од иднината.
+            </p>
+            <div class="ft__socials">
+              <a href="https://www.instagram.com/biznisarena/" class="ft__social" aria-label="Instagram" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              </a>
+              <a href="#" class="ft__social" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8 11v5M8 8h.01M12 16v-3a2 2 0 114 0v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </a>
+              <a href="#" class="ft__social" aria-label="X / Twitter">
+                <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </a>
+            </div>
+          </div>
 
-          <div class="footer-legal">
+          <!-- Right: nav links -->
+          <nav class="ft__nav" aria-label="Footer навигација">
+            <a href="/index.html">Почетна</a>
+            <a href="/agenda.html">Агенда</a>
+            <a href="/speakers.html">Говорници</a>
+            <a href="/partners.html">Партнери</a>
+            <a href="/contact.html">Контакт</a>
+          </nav>
+        </div>
+
+        <div class="ft__line"></div>
+
+        <div class="ft__bottom">
+          <span>© 2026 Biznis Arena. Сите права се задржани.</span>
+          <div class="ft__legal">
             <a href="#">Политика на приватност</a>
             <a href="#">Услови на користење</a>
           </div>
